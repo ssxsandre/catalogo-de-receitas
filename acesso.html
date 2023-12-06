@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso às receitas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+    box-sizing: border-box;
+    font-family: 'Montserrat', serif;
+}
+body {
+    background-color: #f8ae8b;
+}
+
+header {
+    text-align: center;
+    background-color: #FF9A6C;
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 4px;
+    padding-bottom: 24px;
+}
+
+#botoes-1-a-8 {
+    display: flex;
+    gap: 32px;
+    padding: 4px 0;
+    position: absolute;
+    top: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    margin: 0;
+    text-align: center;
+}
+
+#botoes-1-a-8,
+#botoes-9 {
+    display: flex;
+    gap: 32px;
+    padding: 4px 0;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    top: 20px; /* Ajuste a margem superior conforme necessário */
+    text-align: center;
+}
+
+#botoes-1-a-8 li,
+#botoes-9 li {
+    margin-bottom: 10px;
+}
+
+#botoes-1-a-8 button,
+#botoes-9 button {
+    background-color: #f55b47;
+    border: none;
+    border-radius: 8px;
+    color: #FFFFFF;
+    padding: 5px 4px;
+    font-size: 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#botoes-1-a-8 a,
+#botoes-9 a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 900;
+}
+
+#botoes-9 {
+    margin-left: auto;
+    display: flex;
+    gap: 32px;
+    padding: 4px 0px 0px 0px;
+    position: absolute;
+    top: 250px;
+    right: 0;
+    list-style: none;
+    margin: 0;
+    text-align: center;
+    font-weight: 1000;
+} 
+        #menu ul {
+            list-style: none;
+            font-weight: bold;
+        }
+        #menu2 ul {
+            list-style: none;
+            
+        }
+        
+        footer {
+            text-align: center;
+            font-weight: 800;
+            margin-top: 20px;
+            background-color: #ff8373;
+            padding: 1px 1px 1px 1px;
+            width: 100%;
+        }
+        #portal button {
+            background-color: #f55b47;
+            border: none;
+            border-radius: 8px;
+            color: #000000;
+            padding: 5px 4px;
+            font-size: 20px;
+            margin: 5px;
+            cursor: pointer;
+            
+}
+
+#portal a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 900;
+}
+footer ul {
+    list-style: none;
+}
+#sugestoes button {
+        background-color: #f55b47;
+        border: none;
+        border-radius: 8px;
+        color: #FFFFFF;
+        padding: 5px 4px;
+        font-size: 20px;
+        margin: 30px 5px 5px 5px; 
+        cursor: pointer;
+        text-decoration: none;
+        font-weight: 900;
+    }
+
+    #sugestoes {
+        position: absolute;
+        left: 0;
+        text-align: left;
+        padding-left: 80px; /* Ajuste conforme necessário */
+       
+    }
+    #sugestao a {
+         text-decoration: none;
+         color: #000000;
+        font-weight: 900;
+    }
+    #sugestoes h2 {
+        padding: 5px 4px;
+        
+        margin: 30px 5px 5px 5px; 
+    }
+
+        
+    </style>
+</head>
+<header>
+    <h2>Se você chegou até aqui, é porque está prestes a desvendar o delicioso universo das nossas receitas! Prepare-se para uma jornada 
+        gastronômica repleta de sabores irresistíveis. Clique nos links abaixo e deixe-se guiar pelo passo a 
+        passo de cada prato. Afinal, a arte da culinária está a apenas um clique de distância. Bom apetite e aproveite cada descoberta!</h2>
+</header>
+<body>
+    <section id="botoes-1-a-8">
+        <nav id="menu">
+         <ul>
+             <li><button id="botao1" type="submit"><a href="receita1.html">Pão de batata</a></button></li>
+             <li><button id="botao2" type="submit"><a href="receita2.html">Pão de forma</a></button></li>
+             <li><button id="botao3" type="submit"><a href="receita3.html">Foccacia</a></button></li>
+             <li><button id="botao4" type="submit"><a href="receita4.html">Pão pita</a></button></li>
+             <li><button id="botao5" type="submit"><a href="receita5.html">Bolo de chocolate</a></button></li>
+             <li><button id="botao6" type="submit"><a href="receita6.html">Bolo de cenoura</a></button></li>
+             <li><button id="botao7" type="submit"><a href="receita7.html">Bolo de banana</a></button></li>
+             
+         </ul>
+     </nav>
+     </section>
+     <section id="botoes-9">
+        <nav id="menu2">
+         <ul>
+             <li><button id="botao8" type="submit"><a href="receita8.html">Bolo de limão</a></button></li>
+             <li><button id="botao9" type="submit"><a href="receita9.html">Pizza</a></button></li>
+             <li><button id="botao10" type="submit"><a href="receita10.html">Pão francês</a></button></li>
+             <li><button id="botao11" type="submit"><a href="receita11.html">Panqueca</a></button></li>
+             <li><button id="botao12" type="submit"><a href="receita12.html">Panqueca americana</a></button></li>
+             <li><button id="botao13" type="submit"><a href="receita13.html">Pão italiano </a></button></li>
+          </ul>
+     </nav>
+     </section>
+     <section id="sugestoes">
+        <h2>Deixe sua Sugestão abaixo</h2>
+       
+        
+        <!-- Formulário de sugestão 
+        <form id="sugestaoForm">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+    
+            <label for="sugestao">Sugestão:</label>
+            <textarea id="sugestao" name="sugestao" rows="4" required></textarea>
+    
+            Botão de envio do formulário -->
+            <button id="sugestao" type="submit"><a href="https://forms.gle/PKEHuBzvx3Nyd5VL8">Clique para preencher o formulário</a></button>
+        </form>
+    </section>
+     <footer>
+        <p>&copy; 2023 Catálogo de Receitas</p>
+            <p> Feito por André</p>
+            <nav id="portal">
+            <ul>
+            <li><button id="botao14" type="submit"><a href="index.html">Retorne ao Portal do catálogo</a></button></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

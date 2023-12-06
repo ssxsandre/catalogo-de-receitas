@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<html class="no-js mh-two-sb" lang="pt-br">
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.4",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript][data-rocket-src]").forEach(e=>{let r=e.getAttribute("data-rocket-src");if(r&&0!==r.indexOf("data:")){0===r.indexOf("//")&&(r=location.protocol+r);try{let i=new URL(r).origin;i!==location.origin&&t.push({src:i,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(n){}}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._pendingWebpackRequests(this),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){if(await this._littleBreath(),!0===t.noModule&&"noModule"in HTMLScriptElement.prototype){t.setAttribute("data-rocket-status","skipped");return}return new Promise(navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(){let t={};function e(e,r){!function e(r){!t[r]&&(t[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),t[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),t[r].originalFunctions.remove.apply(r,arguments)});function i(e){return t[r].eventsToRewrite.indexOf(e)>=0?"rocket-"+e:e}}(e),t[e].eventsToRewrite.push(r)}function r(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}e(document,"DOMContentLoaded"),e(window,"DOMContentLoaded"),e(window,"load"),e(window,"pageshow"),e(document,"readystatechange"),r(document,"onreadystatechange"),r(window,"onload"),r(window,"onpageshow")}_delayJQueryReady(t){let e;function r(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}function i(i){if(i&&i.fn&&!t.allJQueries.includes(i)){i.fn.ready=i.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(i):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(i)),i([])};let n=i.fn.on;i.fn.on=i.fn.init.prototype.on=function(){return this[0]===window&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=r(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(t=>{let e=arguments[0][t];delete arguments[0][t],arguments[0][r(t)]=e})),n.apply(this,arguments),this},t.allJQueries.push(i)}e=i}i(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){i(t)}})}async _pendingWebpackRequests(t){let e=document.querySelector("script[data-webpack]");async function r(){return new Promise(t=>{e.addEventListener("load",t),e.addEventListener("error",t)})}e&&(await r(),await t._requestAnimFrame(),await t._pendingWebpackRequests(t))}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="fb:pages" content="306355719426930" />
+<meta property="fb:app_id" content="537357540535532" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="preconnect" href="https://tags.premiumads.com.br">
+<link rel="preconnect" href="https://securepubads.g.doubleclick.net">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+<title>Em busca da pizza perfeita: especialistas dão 5 dicas para virar expert no assunto - Forbes</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Sarala%3A300%2C400%2C400italic%2C600%2C700&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sarala%3A300%2C400%2C400italic%2C600%2C700&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sarala%3A300%2C400%2C400italic%2C600%2C700&#038;display=swap" /></noscript>
+<link rel="preload" as="font" href="https://forbes.com.br/wp-content/themes/mh-magazine-child-corebiz/fonts/WorkSans-Regular.ttf" crossorigin>
+<link rel="preload" as="font" href="https://forbes.com.br/wp-content/themes/mh-magazine-child-corebiz/fonts/WorkSans-SemiBold.ttf" crossorigin>
+<link rel="preload" as="font" href="https://forbes.com.br/wp-content/themes/mh-magazine-child-corebiz/fonts/WorkSans-Medium.ttf" crossorigin>
+<link rel="preload" as="font" href="https://forbes.com.br/wp-content/themes/mh-magazine-child-corebiz/fonts/Merriweather-Bold.ttf" crossorigin>
+<link rel="preload" as="font" href="https://forbes.com.br/wp-content/themes/mh-magazine/fonts/fontawesome-webfont.woff2" crossorigin>
+<link rel="preload" as="font" href="https://forbes.com.br/wp-content/themes/mh-magazine-child-corebiz/fonts/Merriweather-Regular.ttf" crossorigin>
+<meta name="description" content="No Dia Mundial da Pizza, a Forbes Brasil falou com oito profissionais sobre os detalhes por trás da iguaria italiana" />
+<link rel="canonical" href="https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Em busca da pizza perfeita: especialistas dão 5 dicas para virar expert no assunto" />
+<meta property="og:description" content="No Dia Mundial da Pizza, a Forbes Brasil falou com oito profissionais sobre os detalhes por trás da iguaria italiana" />
+<meta property="og:url" content="https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/" />
+<meta property="og:site_name" content="Forbes Brasil" />
+<meta property="article:publisher" content="https://www.facebook.com/ForbesBrasil" />
+<meta property="article:published_time" content="2021-07-10T09:01:27+00:00" />
+<meta property="article:modified_time" content="2021-07-10T18:43:05+00:00" />
+<meta property="og:image" content="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Veridiana-Margherita_8julho2021_Divulgacao-1024x683.jpg" />
+<meta property="og:image:width" content="1024" />
+<meta property="og:image:height" content="683" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta name="author" content="Lucas Teixeira" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Veridiana-Margherita_8julho2021_Divulgacao-1024x683.jpg" />
+<meta name="twitter:creator" content="@forbesbr" />
+<meta name="twitter:site" content="@forbesbr" />
+<meta name="twitter:label1" content="Escrito por" />
+<meta name="twitter:data1" content="Lucas Teixeira" />
+<meta name="twitter:label2" content="Est. tempo de leitura" />
+<meta name="twitter:data2" content="3 minutos" />
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"NewsArticle","@id":"https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/#article","isPartOf":{"@id":"https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/"},"author":{"name":"Lucas Teixeira","@id":"https://forbes.com.br/#/schema/person/ad18f50892eb9f101e9f6ca1c7c76cc1"},"headline":"Em busca da pizza perfeita: especialistas dão 5 dicas para virar expert no assunto","datePublished":"2021-07-10T09:01:27+00:00","dateModified":"2021-07-10T18:43:05+00:00","mainEntityOfPage":{"@id":"https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/"},"wordCount":488,"publisher":{"@id":"https://forbes.com.br/#organization"},"image":{"@id":"https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/#primaryimage"},"thumbnailUrl":"https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Veridiana-Margherita_8julho2021_Divulgacao.jpg","keywords":["Bráz Pizzaria","chef","especialista","FORBES","ForbesLife","gastronomia","itália","Pizzarias"],"articleSection":["ForbesLife","Negócios","Principal"],"inLanguage":"pt-BR","copyrightYear":"2021","copyrightHolder":{"@id":"https://forbes.com.br/#organization"}},{"@type":"WebPage","@id":"https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/","url":"https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/","name":"Em busca da pizza perfeita: especialistas dão 5 dicas para virar expert no assunto - Forbes","isPartOf":{"@id":"https://forbes.com.br/#website"},"primaryImageOfPage":{"@id":"https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/#primaryimage"},"image":{"@id":"https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/#primaryimage"},"thumbnailUrl":"https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Veridiana-Margherita_8julho2021_Divulgacao.jpg","datePublished":"2021-07-10T09:01:27+00:00","dateModified":"2021-07-10T18:43:05+00:00","description":"No Dia Mundial da Pizza, a Forbes Brasil falou com oito profissionais sobre os detalhes por trás da iguaria italiana","breadcrumb":{"@id":"https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/#breadcrumb"},"inLanguage":"pt-BR","potentialAction":[{"@type":"ReadAction","target":["https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/"]}]},{"@type":"ImageObject","inLanguage":"pt-BR","@id":"https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/#primaryimage","url":"https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Veridiana-Margherita_8julho2021_Divulgacao.jpg","contentUrl":"https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Veridiana-Margherita_8julho2021_Divulgacao.jpg","width":2000,"height":1333,"caption":"A Unesco, em dezembro de 2017, elegeu a arte dos pizzaiolos napolitanos como Patrimônio Imaterial da Humanidade"},{"@type":"BreadcrumbList","@id":"https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://forbes.com.br/"},{"@type":"ListItem","position":2,"name":"ForbesLife","item":"https://forbes.com.br/forbeslife/"},{"@type":"ListItem","position":3,"name":"Em busca da pizza perfeita: especialistas dão 5 dicas para virar expert no assunto"}]},{"@type":"WebSite","@id":"https://forbes.com.br/#website","url":"https://forbes.com.br/","name":"Forbes Brasil","description":"Forbes, a mais conceituada revista de negócios e economia do mundo.","publisher":{"@id":"https://forbes.com.br/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://forbes.com.br/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"pt-BR"},{"@type":"Organization","@id":"https://forbes.com.br/#organization","name":"Forbes Brasil","url":"https://forbes.com.br/","logo":{"@type":"ImageObject","inLanguage":"pt-BR","@id":"https://forbes.com.br/#/schema/logo/image/","url":"https://forbes.com.br/wp-content/uploads/2021/10/Forbes_Icon.png","contentUrl":"https://forbes.com.br/wp-content/uploads/2021/10/Forbes_Icon.png","width":1920,"height":482,"caption":"Forbes Brasil"},"image":{"@id":"https://forbes.com.br/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/ForbesBrasil","https://twitter.com/forbesbr","https://www.instagram.com/forbesbr/","https://www.linkedin.com/company/forbes-brasil","https://www.youtube.com/channel/UCGU7j8NZfhzJ2njwb2Fzcpw"]},{"@type":"Person","@id":"https://forbes.com.br/#/schema/person/ad18f50892eb9f101e9f6ca1c7c76cc1","name":"Lucas Teixeira","image":{"@type":"ImageObject","inLanguage":"pt-BR","@id":"https://forbes.com.br/#/schema/person/image/","url":"https://secure.gravatar.com/avatar/fafef399df44129cf59c23897f29b886?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/fafef399df44129cf59c23897f29b886?s=96&d=mm&r=g","caption":"Lucas Teixeira"},"url":"https://forbes.com.br/author/lucas-teixeira/"}]}</script>
+
+<link rel="amphtml" href="https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/?amp" /><meta name="generator" content="AMP for WP 1.0.92" /><link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+<link href="https://fonts.gstatic.com" crossorigin rel="preconnect" />
+<link rel="alternate" type="application/rss+xml" title="Feed para Forbes Brasil &raquo;" href="https://forbes.com.br/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para Forbes Brasil &raquo;" href="https://forbes.com.br/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Feed de Forbes Brasil &raquo; Story" href="https://forbes.com.br/web-stories/feed/">
+
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-PJBVHR4');</script>
+
+<style id="wp-emoji-styles-inline-css" type="text/css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<style id="classic-theme-styles-inline-css" type="text/css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="galleryCSS-css" href="https://forbes.com.br/wp-content/plugins/pks-gallery/pks-gallery.css?ver=20180710" type="text/css" media="screen" />
+<link rel="stylesheet" id="poll-maker-ays-css" href="https://forbes.com.br/wp-content/plugins/poll-maker/public/css/poll-maker-ays-public.css?ver=4.9.3" type="text/css" media="all" />
+<link rel="stylesheet" id="mh-magazine-css" href="https://forbes.com.br/wp-content/themes/mh-magazine/style.css?ver=3.9.9" type="text/css" media="all" />
+<link rel="stylesheet" id="mh-magazine-child-css" href="https://forbes.com.br/wp-content/themes/mh-magazine-child-corebiz/style.css?ver=2023.06.26-16:27" type="text/css" media="all" />
+<link rel="stylesheet" id="bootstrap-grid-css" href="https://forbes.com.br/wp-content/themes/mh-magazine-child-corebiz/css/bootstrap-grid.min.css?ver=5.0.2" type="text/css" media="all" />
+<link rel="stylesheet" id="font-awesome-brands-css" href="https://forbes.com.br/wp-content/themes/mh-magazine-child-corebiz/css/brands.min.css?ver=6.4.2" type="text/css" media="all" />
+<link rel="stylesheet" id="swiper-css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css?ver=2022.11.17" type="text/css" media="all" />
+<link rel="stylesheet" id="mh-font-awesome-css" href="https://forbes.com.br/wp-content/themes/mh-magazine/includes/font-awesome.min.css" type="text/css" media="all" />
+<style id="rocket-lazyload-inline-css" type="text/css">
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://forbes.com.br/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://forbes.com.br/wordpress/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://forbes.com.br/wordpress/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js?ver=20221122" id="swiper-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://forbes.com.br/wp-content/themes/mh-magazine/js/scripts.js?ver=3.9.9" id="mh-scripts-js"></script>
+<link rel="https://api.w.org/" href="https://forbes.com.br/wp-json/" /><link rel="alternate" type="application/json" href="https://forbes.com.br/wp-json/wp/v2/posts/406155" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://forbes.com.br/wordpress/xmlrpc.php?rsd" />
+<link rel="shortlink" href="https://forbes.com.br/?p=406155" />
+<link rel="alternate" type="application/json+oembed" href="https://forbes.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fforbes.com.br%2Fforbeslife%2F2021%2F07%2Fem-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://forbes.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fforbes.com.br%2Fforbeslife%2F2021%2F07%2Fem-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto%2F&#038;format=xml" />
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" async data-rocket-src="https://forbes.com.br/_tracker/406155"></script><style type="text/css">
+.mh-navigation li:hover, .mh-navigation ul li:hover > ul, .mh-main-nav-wrap, .mh-main-nav, .mh-social-nav li a:hover, .entry-tags li, .mh-slider-caption, .mh-widget-layout8 .mh-widget-title .mh-footer-widget-title-inner, .mh-widget-col-1 .mh-slider-caption, .mh-widget-col-1 .mh-posts-lineup-caption, .mh-carousel-layout1, .mh-spotlight-widget, .mh-social-widget li a, .mh-author-bio-widget, .mh-footer-widget .mh-tab-comment-excerpt, .mh-nip-item:hover .mh-nip-overlay, .mh-widget .tagcloud a, .mh-footer-widget .tagcloud a, .mh-footer, .mh-copyright-wrap, input[type=submit]:hover, #infinite-handle span:hover { background: #19285e; }
+.mh-extra-nav-bg { background: rgba(25, 40, 94, 0.2); }
+.mh-slider-caption, .mh-posts-stacked-title, .mh-posts-lineup-caption { background: #19285e; background: rgba(25, 40, 94, 0.8); }
+@media screen and (max-width: 900px) { #mh-mobile .mh-slider-caption, #mh-mobile .mh-posts-lineup-caption { background: rgba(25, 40, 94, 1); } }
+.slicknav_menu, .slicknav_nav ul, #mh-mobile .mh-footer-widget .mh-posts-stacked-overlay { border-color: #19285e; }
+.mh-copyright, .mh-copyright a { color: #fff; }
+.mh-widget-layout4 .mh-widget-title { background: #343c5e; background: rgba(52, 60, 94, 0.6); }
+.mh-preheader, .mh-wide-layout .mh-subheader, .mh-ticker-title, .mh-main-nav li:hover, .mh-footer-nav, .slicknav_menu, .slicknav_btn, .slicknav_nav .slicknav_item:hover, .slicknav_nav a:hover, .mh-back-to-top, .mh-subheading, .entry-tags .fa, .entry-tags li:hover, .mh-widget-layout2 .mh-widget-title, .mh-widget-layout4 .mh-widget-title-inner, .mh-widget-layout4 .mh-footer-widget-title, .mh-widget-layout5 .mh-widget-title-inner, .mh-widget-layout6 .mh-widget-title, #mh-mobile .flex-control-paging li a.flex-active, .mh-image-caption, .mh-carousel-layout1 .mh-carousel-caption, .mh-tab-button.active, .mh-tab-button.active:hover, .mh-footer-widget .mh-tab-button.active, .mh-social-widget li:hover a, .mh-footer-widget .mh-social-widget li a, .mh-footer-widget .mh-author-bio-widget, .tagcloud a:hover, .mh-widget .tagcloud a:hover, .mh-footer-widget .tagcloud a:hover, .mh-posts-stacked-item .mh-meta, .page-numbers:hover, .mh-loop-pagination .current, .mh-comments-pagination .current, .pagelink, a:hover .pagelink, input[type=submit], #infinite-handle span { background: #343c5e; }
+.mh-main-nav-wrap .slicknav_nav ul, blockquote, .mh-widget-layout1 .mh-widget-title, .mh-widget-layout3 .mh-widget-title, .mh-widget-layout5 .mh-widget-title, .mh-widget-layout8 .mh-widget-title:after, #mh-mobile .mh-slider-caption, .mh-carousel-layout1, .mh-spotlight-widget, .mh-author-bio-widget, .mh-author-bio-title, .mh-author-bio-image-frame, .mh-video-widget, .mh-tab-buttons, textarea:hover, input[type=text]:hover, input[type=email]:hover, input[type=tel]:hover, input[type=url]:hover { border-color: #343c5e; }
+.mh-header-tagline, .mh-dropcap, .mh-carousel-layout1 .flex-direction-nav a, .mh-carousel-layout2 .mh-carousel-caption, .mh-posts-digest-small-category, .mh-posts-lineup-more, .bypostauthor .fn:after, .mh-comment-list .comment-reply-link:before, #respond #cancel-comment-reply-link:before { color: #343c5e; }
+.mh-subheader, .page-numbers, a .pagelink, .mh-widget-layout3 .mh-widget-title, .mh-widget .search-form, .mh-tab-button, .mh-tab-content, .mh-nip-widget, .mh-magazine-facebook-page-widget, .mh-social-widget, .mh-posts-horizontal-widget, .mh-ad-spot, .mh-info-spot { background: #efefef; }
+.mh-tab-post-item { border-color: rgba(255, 255, 255, 0.3); }
+.mh-tab-comment-excerpt { background: rgba(255, 255, 255, 0.6); }
+body, a, blockquote, blockquote cite, .post .entry-title, .page-title, .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6, .wp-caption-text, .wp-block-image figcaption, .wp-block-audio figcaption, #respond .comment-reply-title, #respond #cancel-comment-reply-link, #respond .logged-in-as a, .mh-ping-list .mh-ping-item a, .mh-widget-layout1 .mh-widget-title, .mh-widget-layout7 .mh-widget-title, .mh-widget-layout8 .mh-widget-title, .mh-slider-layout4 .mh-slider-caption, .mh-slider-layout4 .mh-slider-caption a, .mh-slider-layout4 .mh-slider-caption a:hover { color: #19285e; }
+.entry-content a { color: #005a8c; }
+a:hover, .entry-content a:hover, #respond a:hover, #respond #cancel-comment-reply-link:hover, #respond .logged-in-as a:hover, .mh-comment-list .comment-meta a:hover, .mh-ping-list .mh-ping-item a:hover, .mh-meta a:hover, .mh-breadcrumb a:hover, .mh-tabbed-widget a:hover { color: #005a8c; }
+</style>
+<!--[if lt IE 9]>
+<script src="https://forbes.com.br/wp-content/themes/mh-magazine/js/css3-mediaqueries.js"></script>
+<![endif]-->
+<style type="text/css">
+.entry-content { font-size: 18px; font-size: 1.125rem; }
+h1, h2, h3, h4, h5, h6, .mh-custom-posts-small-title { font-family: "Sarala", sans-serif; }
+body { font-family: "Sarala", sans-serif; }
+</style>
+<style type="text/css" media="screen">
+	#Forbes_Stick{left:0;position:fixed;text-align:center;bottom:0;width:100%;z-index:999999}#share-row-sticky{animation-delay:0.5s;animation-direction:normal;animation-duration:0.5s;animation-iteration-count:1;animation-name:sticky-bar-slide-in;background:none repeat scroll 0 0 #fff;border-top:1px solid #e0d6cc;bottom:0;left:0;position:fixed;width:100%;z-index:1000;box-sizing:border-box}.display-desk{display:none}.display-mobile{display:none}
+		@media screen and (min-width:990px){.display-desk{display:block;}}
+		@media screen and (max-width:989px){.display-mobile{display:block;}}
+	</style>
+<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Article",
+			"headline": "Em busca da pizza perfeita: especialistas dão 5 dicas para virar expert no assunto",
+			"image": "https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Veridiana-Margherita_8julho2021_Divulgacao.jpg",
+			"author": {
+				"@type": "Person",
+				"name": "Beatriz Calais e Giovanna Simonetti"
+			},
+			"publisher": {
+				"@type": "Organization",
+				"name": "Forbes Brasil",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "https://forbes.com.br/wp-content/uploads/2018/11/cropped-Logo-Forbes-Brasil_PANTONE-5395-U_recortado.png"
+				}
+			},
+			"url": "https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/",
+			"mainEntityOfPage": {
+				"@type": "WebPage",
+				"@id": "https://forbes.com.br/"
+			},
+			"datePublished": "2021-07-10 06:01:27",
+			"dateModified": "2021-07-10 15:43:05"
+		}
+		</script>
+<meta name="ga:author" content="Beatriz Calais e Giovanna Simonetti">
+<meta name="ga:date_published" content="2021-07-10 06:01:27">
+<link rel="shortcut icon" href="/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="rocketlazyloadscript" data-rocket-src="https://www.google.com/recaptcha/api.js" async defer></script><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+</head>
+<body id="mh-mobile" class="post-template-default single single-post postid-406155 single-format-standard mh-boxed-layout mh-right-sb mh-loop-layout1 mh-widget-layout4" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJBVHR4"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<header itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+<nav>
+
+
+
+<div class="row header-desktop">
+<div class="col-4 header-desktop__left">
+<input type="checkbox" id="icon-menu" />
+<label for="icon-menu">
+<div class="header-desktop__left__menu">
+<span class="hamburguer"></span>
+</div>
+</label>
+</div>
+<div class="col-4 header-desktop__center">
+<a href="https://forbes.com.br" style="padding-top: 18px;">
+
+<svg class="fs-icon fs-icon--forbes-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 54" style="height: 28px; width: 104px; fill: #fff; pointer-events: none;"><path d="M113.3 18.2c0-5.8.1-11.2.4-16.2L98.4 4.9v1.4l1.5.2c1.1.1 1.8.5 2.2 1.1.4.7.7 1.7.9 3.2.2 2.9.4 9.5.3 19.9 0 10.3-.1 16.8-.3 19.3 5.5 1.2 9.8 1.7 13 1.7 6 0 10.7-1.7 14.1-5.2 3.4-3.4 5.2-8.2 5.2-14.1 0-4.7-1.3-8.6-3.9-11.7-2.6-3.1-5.9-4.6-9.8-4.6-2.6 0-5.3.7-8.3 2.1zm.3 30.8c-.2-3.2-.4-12.8-.4-28.5.9-.3 2.1-.5 3.6-.5 2.4 0 4.3 1.2 5.7 3.7 1.4 2.5 2.1 5.5 2.1 9.3 0 4.7-.8 8.5-2.4 11.7-1.6 3.1-3.6 4.7-6.1 4.7-.8-.2-1.6-.3-2.5-.4zM41 3H1v2l2.1.2c1.6.3 2.7.9 3.4 1.8.7 1 1.1 2.6 1.2 4.8.8 10.8.8 20.9 0 30.2-.2 2.2-.6 3.8-1.2 4.8-.7 1-1.8 1.6-3.4 1.8l-2.1.3v2h25.8v-2l-2.7-.2c-1.6-.2-2.7-.9-3.4-1.8-.7-1-1.1-2.6-1.2-4.8-.3-4-.5-8.6-.5-13.7l5.4.1c2.9.1 4.9 2.3 5.9 6.7h2V18.9h-2c-1 4.3-2.9 6.5-5.9 6.6l-5.4.1c0-9 .2-15.4.5-19.3h7.9c5.6 0 9.4 3.6 11.6 10.8l2.4-.7L41 3zm-4.7 30.8c0 5.2 1.5 9.5 4.4 12.9 2.9 3.4 7.2 5 12.6 5s9.8-1.7 13-5.2c3.2-3.4 4.7-7.7 4.7-12.9s-1.5-9.5-4.4-12.9c-2.9-3.4-7.2-5-12.6-5s-9.8 1.7-13 5.2c-3.2 3.4-4.7 7.7-4.7 12.9zm22.3-11.4c1.2 2.9 1.7 6.7 1.7 11.3 0 10.6-2.2 15.8-6.5 15.8-2.2 0-3.9-1.5-5.1-4.5-1.2-3-1.7-6.8-1.7-11.3C47 23.2 49.2 18 53.5 18c2.2-.1 3.9 1.4 5.1 4.4zm84.5 24.3c3.3 3.3 7.5 5 12.5 5 3.1 0 5.8-.6 8.2-1.9 2.4-1.2 4.3-2.7 5.6-4.5l-1-1.2c-2.2 1.7-4.7 2.5-7.6 2.5-4 0-7.1-1.3-9.2-4-2.2-2.7-3.2-6.1-3-10.5H170c0-4.8-1.2-8.7-3.7-11.8-2.5-3-6-4.5-10.5-4.5-5.6 0-9.9 1.8-13 5.3-3.1 3.5-4.6 7.8-4.6 12.9 0 5.2 1.6 9.4 4.9 12.7zm7.4-25.1c1.1-2.4 2.5-3.6 4.4-3.6 3 0 4.5 3.8 4.5 11.5l-10.6.2c.1-3 .6-5.7 1.7-8.1zm46.4-4c-2.7-1.2-6.1-1.9-10.2-1.9-4.2 0-7.5 1.1-10 3.2s-3.8 4.7-3.8 7.8c0 2.7.8 4.8 2.3 6.3 1.5 1.5 3.9 2.8 7 3.9 2.8 1 4.8 2 5.8 2.9 1 1 1.6 2.1 1.6 3.6 0 1.4-.5 2.7-1.6 3.7-1 1.1-2.4 1.6-4.2 1.6-4.4 0-7.7-3.2-10-9.6l-1.7.5.4 10c3.6 1.4 7.6 2.1 12 2.1 4.6 0 8.1-1 10.7-3.1 2.6-2 3.9-4.9 3.9-8.5 0-2.4-.6-4.4-1.9-5.9-1.3-1.5-3.4-2.8-6.4-4-3.3-1.2-5.6-2.3-6.8-3.3-1.2-1-1.8-2.2-1.8-3.7s.4-2.7 1.3-3.7 2-1.4 3.4-1.4c4 0 6.9 2.9 8.7 8.6l1.7-.5-.4-8.6zm-96.2-.9c-1.4-.7-2.9-1-4.6-1-1.7 0-3.4.7-5.3 2.1-1.9 1.4-3.3 3.3-4.4 5.9l.1-8-15.2 3v1.4l1.5.1c1.9.2 3 1.7 3.2 4.4.6 6.2.6 12.8 0 19.8-.2 2.7-1.3 4.1-3.2 4.4l-1.5.2v1.9h21.2V49l-2.7-.2c-1.9-.2-3-1.7-3.2-4.4-.6-5.8-.7-12-.2-18.4.6-1 1.9-1.6 3.9-1.8 2-.2 4.3.4 6.7 1.8l3.7-9.3z"></path></svg>
+</a>
+</div>
+<div class="col-4 header-desktop__right">
+<div class="header-desktop__right--no-click-search">
+<a href="https://forbes.com.br/under30" class="header-desktop__right__agro100">UNDER 30</a>
+<a href="https://forbes.com.br/assine" class="header-desktop__right__assine">Assine</a>
+<img id="icon-search" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://forbes.com.br/wp-content/themes/mh-magazine-child-corebiz/images/icon-search.svg" /><noscript><img id="icon-search" src="https://forbes.com.br/wp-content/themes/mh-magazine-child-corebiz/images/icon-search.svg" /></noscript>
+</div>
+<div class="header-desktop__right--click-search" id="search-desk">
+<form action="https://forbes.com.br" method="get">
+<div class="row">
+<div class="col-8">
+<input class="header-desktop__right__input" id="input-search" name="s" type="text" placeholder="Digite sua pesquisa" value>
+</div>
+<div class="col-2 header-desktop__right__div-buscar">
+<button class="header-desktop__right__buscar">Buscar</button>
+</div>
+<div class="col-2 header-desktop__right__div-close">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2025%200'%3E%3C/svg%3E" width="25" onclick="closeSearchDesk()" data-lazy-src="https://forbes.com.br/wp-content/themes/mh-magazine-child-corebiz/images/icon-close-red.svg" /><noscript><img src="https://forbes.com.br/wp-content/themes/mh-magazine-child-corebiz/images/icon-close-red.svg" width="25" onclick="closeSearchDesk()" /></noscript>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="row header-mobile">
+<div class="col-4 header-mobile__left">
+<input type="checkbox" id="icon-menu-mobile" />
+<label for="icon-menu-mobile">
+<div class="header-mobile__left__menu">
+<span class="hamburguer"></span>
+</div>
+</label>
+</div>
+<div class="col-4 header-mobile__center">
+<a href="https://forbes.com.br" style="padding-top: 18px;">
+
+<svg class="fs-icon fs-icon--forbes-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 54" style="height: 28px; width: 104px; fill: #fff; pointer-events: none;"><path d="M113.3 18.2c0-5.8.1-11.2.4-16.2L98.4 4.9v1.4l1.5.2c1.1.1 1.8.5 2.2 1.1.4.7.7 1.7.9 3.2.2 2.9.4 9.5.3 19.9 0 10.3-.1 16.8-.3 19.3 5.5 1.2 9.8 1.7 13 1.7 6 0 10.7-1.7 14.1-5.2 3.4-3.4 5.2-8.2 5.2-14.1 0-4.7-1.3-8.6-3.9-11.7-2.6-3.1-5.9-4.6-9.8-4.6-2.6 0-5.3.7-8.3 2.1zm.3 30.8c-.2-3.2-.4-12.8-.4-28.5.9-.3 2.1-.5 3.6-.5 2.4 0 4.3 1.2 5.7 3.7 1.4 2.5 2.1 5.5 2.1 9.3 0 4.7-.8 8.5-2.4 11.7-1.6 3.1-3.6 4.7-6.1 4.7-.8-.2-1.6-.3-2.5-.4zM41 3H1v2l2.1.2c1.6.3 2.7.9 3.4 1.8.7 1 1.1 2.6 1.2 4.8.8 10.8.8 20.9 0 30.2-.2 2.2-.6 3.8-1.2 4.8-.7 1-1.8 1.6-3.4 1.8l-2.1.3v2h25.8v-2l-2.7-.2c-1.6-.2-2.7-.9-3.4-1.8-.7-1-1.1-2.6-1.2-4.8-.3-4-.5-8.6-.5-13.7l5.4.1c2.9.1 4.9 2.3 5.9 6.7h2V18.9h-2c-1 4.3-2.9 6.5-5.9 6.6l-5.4.1c0-9 .2-15.4.5-19.3h7.9c5.6 0 9.4 3.6 11.6 10.8l2.4-.7L41 3zm-4.7 30.8c0 5.2 1.5 9.5 4.4 12.9 2.9 3.4 7.2 5 12.6 5s9.8-1.7 13-5.2c3.2-3.4 4.7-7.7 4.7-12.9s-1.5-9.5-4.4-12.9c-2.9-3.4-7.2-5-12.6-5s-9.8 1.7-13 5.2c-3.2 3.4-4.7 7.7-4.7 12.9zm22.3-11.4c1.2 2.9 1.7 6.7 1.7 11.3 0 10.6-2.2 15.8-6.5 15.8-2.2 0-3.9-1.5-5.1-4.5-1.2-3-1.7-6.8-1.7-11.3C47 23.2 49.2 18 53.5 18c2.2-.1 3.9 1.4 5.1 4.4zm84.5 24.3c3.3 3.3 7.5 5 12.5 5 3.1 0 5.8-.6 8.2-1.9 2.4-1.2 4.3-2.7 5.6-4.5l-1-1.2c-2.2 1.7-4.7 2.5-7.6 2.5-4 0-7.1-1.3-9.2-4-2.2-2.7-3.2-6.1-3-10.5H170c0-4.8-1.2-8.7-3.7-11.8-2.5-3-6-4.5-10.5-4.5-5.6 0-9.9 1.8-13 5.3-3.1 3.5-4.6 7.8-4.6 12.9 0 5.2 1.6 9.4 4.9 12.7zm7.4-25.1c1.1-2.4 2.5-3.6 4.4-3.6 3 0 4.5 3.8 4.5 11.5l-10.6.2c.1-3 .6-5.7 1.7-8.1zm46.4-4c-2.7-1.2-6.1-1.9-10.2-1.9-4.2 0-7.5 1.1-10 3.2s-3.8 4.7-3.8 7.8c0 2.7.8 4.8 2.3 6.3 1.5 1.5 3.9 2.8 7 3.9 2.8 1 4.8 2 5.8 2.9 1 1 1.6 2.1 1.6 3.6 0 1.4-.5 2.7-1.6 3.7-1 1.1-2.4 1.6-4.2 1.6-4.4 0-7.7-3.2-10-9.6l-1.7.5.4 10c3.6 1.4 7.6 2.1 12 2.1 4.6 0 8.1-1 10.7-3.1 2.6-2 3.9-4.9 3.9-8.5 0-2.4-.6-4.4-1.9-5.9-1.3-1.5-3.4-2.8-6.4-4-3.3-1.2-5.6-2.3-6.8-3.3-1.2-1-1.8-2.2-1.8-3.7s.4-2.7 1.3-3.7 2-1.4 3.4-1.4c4 0 6.9 2.9 8.7 8.6l1.7-.5-.4-8.6zm-96.2-.9c-1.4-.7-2.9-1-4.6-1-1.7 0-3.4.7-5.3 2.1-1.9 1.4-3.3 3.3-4.4 5.9l.1-8-15.2 3v1.4l1.5.1c1.9.2 3 1.7 3.2 4.4.6 6.2.6 12.8 0 19.8-.2 2.7-1.3 4.1-3.2 4.4l-1.5.2v1.9h21.2V49l-2.7-.2c-1.9-.2-3-1.7-3.2-4.4-.6-5.8-.7-12-.2-18.4.6-1 1.9-1.6 3.9-1.8 2-.2 4.3.4 6.7 1.8l3.7-9.3z"></path></svg>
+</a>
+</div>
+<div class="col-4 header-mobile__right">
+<img id="icon-search-mobile" style src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://forbes.com.br/wp-content/themes/mh-magazine-child-corebiz/images/icon-search.svg" /><noscript><img id="icon-search-mobile" style="" src="https://forbes.com.br/wp-content/themes/mh-magazine-child-corebiz/images/icon-search.svg" /></noscript>
+</div>
+</div>
+<div class="header-mobile--click-search" id="search-mobile">
+<form action="https://forbes.com.br" method="get">
+<div class="row">
+<div class="col-8">
+<input class="header-mobile__input" id="input-search-mobile" name="s" type="text" placeholder="Digite sua pesquisa" value>
+</div>
+<div class="col-2">
+<button class="header-mobile__buscar">Buscar</button>
+</div>
+<div class="col-2 header-mobile__close">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" onclick="closeSearchMobile()" data-lazy-src="https://forbes.com.br/wp-content/themes/mh-magazine-child-corebiz/images/icon-close-red.svg" /><noscript><img src="https://forbes.com.br/wp-content/themes/mh-magazine-child-corebiz/images/icon-close-red.svg" onclick="closeSearchMobile()" /></noscript>
+</div>
+</div>
+</form>
+</div>
+
+
+
+
+
+
+<div class="header-mobile__menu" id="menu-itens-mobile">
+<div class="header-mobile__menu-itens">
+<a href="https://forbesplus.com.br/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: #222E56">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">FORBES+</span>
+</button>
+</a>
+<button class="collapsible sub-1">
+<a href="#">
+<span class="pipe" style="color: red">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">UNDER 30</span>
+</a>
+</button>
+<div class="header-mobile__menu-itens__content">
+<a href="https://forbes.com.br/under30">
+<button class="collapsible no-sub">UNDER 30 2023</button>
+</a>
+<a href="https://forbes.com.br/listas/2023/03/forbes-under-30-2022/">
+<button class="collapsible no-sub">UNDER 30 2022</button>
+</a>
+<a href="https://forbes.com.br/forbeslife/2021/12/lista-under-30-de-2021-e-destaque-da-nova-edicao-da-forbes/">
+<button class="collapsible no-sub">UNDER 30 2021</button>
+</a>
+<a href="https://forbes.com.br/listas/2021/02/under-30-2020-90-destaques-brasileiros-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2020</button>
+</a>
+<a href="https://forbes.com.br/listas/2020/05/under-30-2019-os-90-destaques-brasileiros/">
+<button class="collapsible no-sub">UNDER 30 2019</button>
+</a>
+<a href="https://forbes.com.br/listas/2019/04/10-destaques-brasileiros-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2018</button>
+</a>
+<a href="https://forbes.com.br/listas/2017/03/91-destaques-brasileiros-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2017</button>
+</a>
+<a href="https://forbes.com.br/fotos/2016/03/30-jovens-mais-promissores-do-brasil-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2016</button>
+</a>
+<a href="https://forbes.com.br/listas/2015/02/under-30-2015-30-destaques-brasileiros-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2015</button>
+</a>
+<a href="https://forbes.com.br/listas/2014/02/under-30-2014-30-destaques-brasileiros-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2014</button>
+</a>
+</div>
+<button class="collapsible sub-1">
+<a href="https://forbes.com.br/forbes-money/">
+<span class="pipe" style="color: #71AA4B">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">FORBES MONEY</span>
+</a>
+</button>
+<div class="header-mobile__menu-itens__content">
+<a href="https://forbes.com.br/tag/bilionarios/">
+<button class="collapsible no-sub">BILIONÁRIOS</button>
+</a>
+</div>
+<button class="collapsible sub-1">
+<a href="https://forbes.com.br/carreira/">
+<span class="pipe" style="color: #6E1FDD">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">CARREIRA</span>
+</a>
+</button>
+<div class="header-mobile__menu-itens__content">
+<a href="https://forbes.com.br/tag/c-suite/">
+<button class="collapsible no-sub">C-SUITE</button>
+</a>
+<a href="https://forbes.com.br/carreira/2022/02/curso-de-lideranca-e-gestao-de-pessoas-2022-forbes-e-singularityu/">
+<button class="collapsible no-sub">LEADING THE FUTURE</button>
+</a>
+</div>
+<a href="https://forbes.com.br/forbes-tech/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: #A0A0A0">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">FORBES TECH</span>
+</button>
+</a>
+<a href="https://forbes.com.br/forbeslife/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: #FDCB2E">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">FORBES LIFE</span>
+</button>
+</a>
+<a href="https://forbes.com.br/forbeslife/forbes-motors/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: #d9e021">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">FORBES MOTORS</span>
+</button>
+</a>
+<a href="https://forbes.com.br/forbes-cast/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: #6e6d6d">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">FORBES CAST</span>
+</button>
+</a>
+<button class="collapsible sub-1">
+<a href="https://forbes.com.br/listas/">
+<span class="pipe" style="color: #969600">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">LISTAS</span>
+</a>
+</button>
+<div class="header-mobile__menu-itens__content">
+<button class="collapsible">
+<a href="https://www.forbes.com.br/under30">UNDER 30</a>
+</button>
+<div class="header-mobile__menu-itens__content">
+<a href="https://forbes.com.br/forbeslife/2022/12/lista-forbes-under-30-2022-veja-destaques-das-15-categorias/">
+<button class="collapsible no-sub">UNDER 30 2022</button>
+</a>
+<a href="https://forbes.com.br/forbeslife/2021/12/lista-under-30-de-2021-e-destaque-da-nova-edicao-da-forbes/">
+<button class="collapsible no-sub">UNDER 30 2021</button>
+</a>
+<a href="https://forbes.com.br/listas/2021/02/under-30-2020-90-destaques-brasileiros-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2020</button>
+</a>
+<a href="https://forbes.com.br/listas/2020/05/under-30-2019-os-90-destaques-brasileiros/">
+<button class="collapsible no-sub">UNDER 30 2019</button>
+</a>
+<a href="https://forbes.com.br/listas/2019/04/10-destaques-brasileiros-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2018</button>
+</a>
+<a href="https://forbes.com.br/listas/2017/03/91-destaques-brasileiros-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2017</button>
+</a>
+<a href="https://forbes.com.br/fotos/2016/03/30-jovens-mais-promissores-do-brasil-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2016</button>
+</a>
+<a href="https://forbes.com.br/listas/2015/02/under-30-2015-30-destaques-brasileiros-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2015</button>
+</a>
+<a href="https://forbes.com.br/listas/2014/02/under-30-2014-30-destaques-brasileiros-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2014</button>
+</a>
+</div>
+<button class="collapsible">
+<a href="https://forbes.com.br/tag/bilionarios-brasileiros/">BILIONÁRIOS BRASILEIROS</a>
+</button>
+<div class="header-mobile__menu-itens__content">
+<a href="https://forbes.com.br/forbes-money/2021/09/veja-a-lista-completa-dos-bilionarios-brasileiros-de-2021/">
+<button class="collapsible no-sub">2021</button>
+</a>
+<a href="https://forbes.com.br/forbes-money/2022/12/lista-forbes-de-bilionarios-brasileiros/">
+<button class="collapsible no-sub">2022</button>
+</a>
+</div>
+<a href="https://forbes.com.br/forbes-mulher/2023/02/mulheres-de-sucesso-2023-veja-quem-sao-as-10-escolhidas/">
+<button class="collapsible no-sub">MULHERES DE SUCESSO</button>
+</a>
+<a href="https://forbes.com.br/forbesagro/2023/01/lista-forbes-agro100-2022-as-maiores-empresas-do-agronegocio-brasileiro/">
+<button class="collapsible no-sub">AGRO100</button>
+</a>
+<button class="collapsible">
+<a href="https://forbes.com.br/tag/50-over-50/">FORBES 50+</a>
+</button>
+<div class="header-mobile__menu-itens__content">
+<a href="https://forbes.com.br/listas/2023/07/lista-forbes-50-over-50-2023/">
+<button class="collapsible no-sub">FORBES 50+ 2023</button>
+</a>
+<a href="https://forbes.com.br/listas/2022/07/forbes-50-destaca-historias-de-reinvencao-e-sucesso-apos-os-50-anos/">
+<button class="collapsible no-sub">FORBES 50+ 2022</button>
+</a>
+<a href="https://forbes.com.br/listas/2021/06/forbes-50-destaca-10-historias-de-reinvencao-e-sucesso-a-partir-dos-50-anos/">
+<button class="collapsible no-sub">FORBES 50+ 2021</button>
+</a>
+</div>
+<a href="https://forbes.com.br/forbes-money/2022/04/os-bilionarios-do-mundo-em-2022/">
+<button class="collapsible no-sub">BILIONÁRIOS DO MUNDO</button>
+</a>
+<a href="https://forbes.com.br/listas/2021/05/heart-billions-as-10-pessoas-mais-ricas-do-pais-na-cotacao-da-moeda-mais-valiosa-de-todas/">
+<button class="collapsible no-sub">HEART BILLIONS</button>
+</a>
+</div>
+<button class="collapsible sub-1">
+<a href="https://forbes.com.br/forbes-mulher/">
+<span class="pipe" style="color: #2AF5F2">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">FORBES MULHER</span>
+</a>
+</button>
+<div class="header-mobile__menu-itens__content">
+<a href="https://forbes.com.br/forbes-mulher/2023/02/mulheres-de-sucesso-2023-veja-quem-sao-as-10-escolhidas/">
+<button class="collapsible no-sub">MULHERES DE SUCESSO</button>
+</a>
+<a href="https://forbes.com.br/tag/minha-jornada/">
+<button class="collapsible no-sub">MINHA JORNADA</button>
+</a>
+</div>
+<button class="collapsible sub-1">
+<a href="https://forbes.com.br/forbesagro/">
+<span class="pipe" style="color: #597F42">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">FORBES AGRO</span>
+</a>
+</button>
+<div class="header-mobile__menu-itens__content">
+<a href="https://forbes.com.br/tag/agroround/">
+<button class="collapsible no-sub">AGROROUND</button>
+</a>
+</div>
+<a href="https://forbes.com.br/forbesesg/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: #23DA28">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">FORB(ESG)</span>
+</button>
+</a>
+<a href="https://forbes.com.br/forbessaude/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: #1388F9">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">FORBES SAÚDE</span>
+</button>
+</a>
+<a href="https://forbes.com.br/eventos/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: red">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">EVENTOS</span>
+</button>
+</a>
+<a href="https://forbes.com.br/forbes-colunas/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: red">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">COLUNAS</span>
+</button>
+</a>
+<a href="https://forbes.com.br/forbes-collab/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: #CA0E5B">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">FORBES COLLAB</span>
+</button>
+</a>
+<a href="https://forbes.com.br/brand-voice/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: #D5131C">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">BRANDVOICE</span>
+</button>
+</a>
+<a href="https://forbes.com.br/infomercial/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: #00a4da">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">INFOMERCIAL</span>
+</button>
+</a>
+<a href="https://forbes.com.br/ultimas-noticias/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: #666">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">ÚLTIMAS NOTÍCIAS</span>
+</button>
+</a>
+<a href="https://forbes.com.br/newsletter/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: red">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">NEWSLETTER</span>
+</button>
+</a>
+<a href="https://forbes.com.br/revista/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: red">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">REVISTA DIGITAL</span>
+</button>
+</a>
+</div>
+
+
+
+<div class="header-mobile__menu__seja-um-assinante">
+<a href="https://forbes.com.br/assine/">
+Seja um assinante
+</a>
+</div>
+
+
+
+
+
+
+<div class="header-mobile__menu__social">
+<a href="https://www.facebook.com/ForbesBrasil" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true" style="color: white;"></i></a><a href="https://twitter.com/forbesbr" target="_blank"><i class="fa-brands fa-x-twitter fa-2x" aria-hidden="true" style="color: white;"></i></a><a href="https://www.instagram.com/forbesbr/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true" style="color: white;"></i></a><a href="https://www.youtube.com/channel/UCGU7j8NZfhzJ2njwb2Fzcpw" target="_blank"><i class="fa fa-youtube-play fa-2x" aria-hidden="true" style="color: white;"></i></a><a href="https://www.linkedin.com/company/forbes-brasil" target="_blank"><i class="fa fa-linkedin fa-2x" aria-hidden="true" style="color: white;"></i></a><a href="http://forbes.com.br/feed/rss/" target="_blank"><i class="fa fa-rss-square fa-2x" aria-hidden="true" style="color: white;"></i></a> </div>
+
+
+
+</div>
+
+
+
+<style type="text/css">
+            .menu-itens__content {
+              padding: 0 35px;
+              max-height: 0;
+              overflow: hidden;
+              transition: max-height .5s ease-out;
+              background-color: #151515;
+            }
+
+            .menu__seja-um-assinante{
+              background-color: #151515;
+              border-top: 1px solid gray;
+              text-align: center;
+              padding: 40px 0 20px 0;
+            }
+
+            .menu__seja-um-assinante a{
+              font-family: 'Work Sans', sans-serif;
+              font-size: 14px; 
+              color: white;
+              padding: 11px 20px;
+              background-color:#151515;
+              text-transform: none;
+              border: 1px solid #FFFFFF;
+            }
+
+            .menu__social{
+              text-align: center;
+              background-color: #151515;
+              padding: 20px 0;
+              margin-top: -1px;
+            }
+
+            .menu__social a{
+              padding: 13px;
+              color: #BFB7B0;
+            }
+
+            #menu-itens{
+              display: block;
+              left: -450px;
+              transition: left 1s;
+            }
+
+
+            .menu{
+              background-color: #151515;
+              position: fixed !important;
+              box-shadow: 0 0 30px 2px #151515;
+              width: 400px;
+              z-index: 100;
+              left: -650px;
+              position: absolute;
+              min-height: 0px;
+              -webkit-transition: all 1s ease-in-out;
+              transition: all 1s ease-in-out;
+              height: 100%;
+              top: 56px;
+              }
+
+            .menu::-webkit-scrollbar, .menu-itens::-webkit-scrollbar { 
+              display: none;
+            }
+
+            @media screen and (max-width: 767px){
+              .menu{ display: none; }
+            }
+
+            .menu-itens{
+              height: 90%;
+              overflow-y: scroll;
+              padding-left: 44px;
+            }
+
+            .collapsible.active:not(.no-sub):after {
+              content: "\2212";
+            }
+
+            .collapsible a:hover{
+              color: white;
+            }
+
+        </style>
+<div class="menu" id="menu-itens">
+<div class="menu-itens">
+<a href="https://forbesplus.com.br/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: #222E56">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px;">FORBES+</span>
+</button>
+</a>
+<button class="collapsible sub-1">
+<a href="#">
+<span class="pipe" style="color: red">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">UNDER 30</span>
+</a>
+</button>
+<div class="menu-itens__content">
+<a href="https://forbes.com.br/under30">
+<button class="collapsible no-sub">UNDER 30 2023</button>
+</a>
+<a href="https://forbes.com.br/listas/2023/03/forbes-under-30-2022/">
+<button class="collapsible no-sub">UNDER 30 2022</button>
+</a>
+<a href="https://forbes.com.br/forbeslife/2021/12/lista-under-30-de-2021-e-destaque-da-nova-edicao-da-forbes/">
+<button class="collapsible no-sub">UNDER 30 2021</button>
+</a>
+<a href="https://forbes.com.br/listas/2021/02/under-30-2020-90-destaques-brasileiros-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2020</button>
+</a>
+<a href="https://forbes.com.br/listas/2020/05/under-30-2019-os-90-destaques-brasileiros/">
+<button class="collapsible no-sub">UNDER 30 2019</button>
+</a>
+<a href="https://forbes.com.br/listas/2019/04/10-destaques-brasileiros-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2018</button>
+</a>
+<a href="https://forbes.com.br/listas/2017/03/91-destaques-brasileiros-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2017</button>
+</a>
+<a href="https://forbes.com.br/fotos/2016/03/30-jovens-mais-promissores-do-brasil-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2016</button>
+</a>
+<a href="https://forbes.com.br/listas/2015/02/under-30-2015-30-destaques-brasileiros-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2015</button>
+</a>
+<a href="https://forbes.com.br/listas/2014/02/under-30-2014-30-destaques-brasileiros-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2014</button>
+</a>
+</div>
+<button class="collapsible sub-1">
+<a href="https://forbes.com.br/forbes-money/">
+<span class="pipe" style="color: #71AA4B">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">FORBES MONEY</span>
+</a>
+</button>
+<div class="menu-itens__content">
+<a href="https://forbes.com.br/tag/bilionarios/">
+<button class="collapsible no-sub">BILIONÁRIOS</button>
+</a>
+</div>
+<button class="collapsible sub-1">
+<a href="https://forbes.com.br/carreira/">
+<span class="pipe" style="color: #6E1FDD">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">CARREIRA</span>
+</a>
+</button>
+<div class="menu-itens__content">
+<a href="https://forbes.com.br/tag/c-suite/">
+<button class="collapsible no-sub">C-SUITE</button>
+</a>
+<a href="https://forbes.com.br/carreira/2022/02/curso-de-lideranca-e-gestao-de-pessoas-2022-forbes-e-singularityu/">
+<button class="collapsible no-sub">LEADING THE FUTURE</button>
+</a>
+</div>
+<a href="https://forbes.com.br/forbes-tech/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: #A0A0A0">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px;">FORBES TECH</span>
+</button>
+</a>
+<a href="https://forbes.com.br/forbeslife/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: #FDCB2E">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px;">FORBES LIFE</span>
+</button>
+</a>
+<a href="https://forbes.com.br/forbeslife/forbes-motors/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: #d9e021">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px;">FORBES MOTORS</span>
+</button>
+</a>
+<a href="https://forbes.com.br/forbes-cast/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: #6e6d6d">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px;">FORBES CAST</span>
+</button>
+</a>
+<button class="collapsible sub-1">
+<a href="https://forbes.com.br/listas/">
+<span class="pipe" style="color: #969600">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">LISTAS</span>
+</a>
+</button>
+<div class="menu-itens__content">
+<button class="collapsible">
+<a href="https://www.forbes.com.br/under30">UNDER 30</a>
+</button>
+<div class="menu-itens__content">
+<a href="https://forbes.com.br/forbeslife/2022/12/lista-forbes-under-30-2022-veja-destaques-das-15-categorias/">
+<button class="collapsible no-sub">UNDER 30 2022</button>
+</a>
+<a href="https://forbes.com.br/forbeslife/2021/12/lista-under-30-de-2021-e-destaque-da-nova-edicao-da-forbes/">
+<button class="collapsible no-sub">UNDER 30 2021</button>
+</a>
+<a href="https://forbes.com.br/listas/2021/02/under-30-2020-90-destaques-brasileiros-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2020</button>
+</a>
+<a href="https://forbes.com.br/listas/2020/05/under-30-2019-os-90-destaques-brasileiros/">
+<button class="collapsible no-sub">UNDER 30 2019</button>
+</a>
+<a href="https://forbes.com.br/listas/2019/04/10-destaques-brasileiros-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2018</button>
+</a>
+<a href="https://forbes.com.br/listas/2017/03/91-destaques-brasileiros-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2017</button>
+</a>
+<a href="https://forbes.com.br/fotos/2016/03/30-jovens-mais-promissores-do-brasil-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2016</button>
+</a>
+<a href="https://forbes.com.br/listas/2015/02/under-30-2015-30-destaques-brasileiros-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2015</button>
+</a>
+<a href="https://forbes.com.br/listas/2014/02/under-30-2014-30-destaques-brasileiros-abaixo-dos-30-anos/">
+<button class="collapsible no-sub">UNDER 30 2014</button>
+</a>
+</div>
+<button class="collapsible">
+<a href="https://forbes.com.br/tag/bilionarios-brasileiros/">BILIONÁRIOS BRASILEIROS</a>
+</button>
+<div class="menu-itens__content">
+<a href="https://forbes.com.br/forbes-money/2021/09/veja-a-lista-completa-dos-bilionarios-brasileiros-de-2021/">
+<button class="collapsible no-sub">2021</button>
+</a>
+<a href="https://forbes.com.br/forbes-money/2022/12/lista-forbes-de-bilionarios-brasileiros/">
+<button class="collapsible no-sub">2022</button>
+</a>
+</div>
+<a href="https://forbes.com.br/forbes-mulher/2023/02/mulheres-de-sucesso-2023-veja-quem-sao-as-10-escolhidas/">
+<button class="collapsible no-sub">MULHERES DE SUCESSO</button>
+</a>
+<a href="https://forbes.com.br/forbesagro/2023/01/lista-forbes-agro100-2022-as-maiores-empresas-do-agronegocio-brasileiro/">
+<button class="collapsible no-sub">AGRO100</button>
+</a>
+<button class="collapsible">
+<a href="https://forbes.com.br/tag/50-over-50/">FORBES 50+</a>
+</button>
+<div class="menu-itens__content">
+<a href="https://forbes.com.br/listas/2023/07/lista-forbes-50-over-50-2023/">
+<button class="collapsible no-sub">FORBES 50+ 2023</button>
+</a>
+<a href="https://forbes.com.br/listas/2022/07/forbes-50-destaca-historias-de-reinvencao-e-sucesso-apos-os-50-anos/">
+<button class="collapsible no-sub">FORBES 50+ 2022</button>
+</a>
+<a href="https://forbes.com.br/listas/2021/06/forbes-50-destaca-10-historias-de-reinvencao-e-sucesso-a-partir-dos-50-anos/">
+<button class="collapsible no-sub">FORBES 50+ 2021</button>
+</a>
+</div>
+<a href="https://forbes.com.br/forbes-money/2022/04/os-bilionarios-do-mundo-em-2022/">
+<button class="collapsible no-sub">BILIONÁRIOS DO MUNDO</button>
+</a>
+<a href="https://forbes.com.br/listas/2021/05/heart-billions-as-10-pessoas-mais-ricas-do-pais-na-cotacao-da-moeda-mais-valiosa-de-todas/">
+<button class="collapsible no-sub">HEART BILLIONS</button>
+</a>
+</div>
+<button class="collapsible sub-1">
+<a href="https://forbes.com.br/forbes-mulher/">
+<span class="pipe" style="color: #2AF5F2">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">FORBES MULHER</span>
+</a>
+</button>
+<div class="menu-itens__content">
+<a href="https://forbes.com.br/forbes-mulher/2023/02/mulheres-de-sucesso-2023-veja-quem-sao-as-10-escolhidas/">
+<button class="collapsible no-sub">MULHERES DE SUCESSO</button>
+</a>
+<a href="https://forbes.com.br/tag/minha-jornada/">
+<button class="collapsible no-sub">MINHA JORNADA</button>
+</a>
+</div>
+<button class="collapsible sub-1">
+<a href="https://forbes.com.br/forbesagro/">
+<span class="pipe" style="color: #597F42">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px">FORBES AGRO</span>
+</a>
+</button>
+<div class="menu-itens__content">
+<a href="https://forbes.com.br/tag/agroround/">
+<button class="collapsible no-sub">AGROROUND</button>
+</a>
+</div>
+<a href="https://forbes.com.br/forbesesg/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: #23DA28">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px;">FORB(ESG)</span>
+</button>
+</a>
+<a href="https://forbes.com.br/forbessaude/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: #1388F9">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px;">FORBES SAÚDE</span>
+</button>
+</a>
+<a href="https://forbes.com.br/eventos/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: red">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px;">EVENTOS</span>
+</button>
+</a>
+<a href="https://forbes.com.br/forbes-colunas/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: red">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px;">COLUNAS</span>
+</button>
+</a>
+<a href="https://forbes.com.br/forbes-collab/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: #CA0E5B">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px;">FORBES COLLAB</span>
+</button>
+</a>
+<a href="https://forbes.com.br/brand-voice/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: #D5131C">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px;">BRANDVOICE</span>
+</button>
+</a>
+<a href="https://forbes.com.br/infomercial/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: #00a4da">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px;">INFOMERCIAL</span>
+</button>
+</a>
+<a href="https://forbes.com.br/ultimas-noticias/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: #666">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px;">ÚLTIMAS NOTÍCIAS</span>
+</button>
+</a>
+<a href="https://forbes.com.br/newsletter/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: red">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px;">NEWSLETTER</span>
+</button>
+</a>
+<a href="https://forbes.com.br/revista/">
+<button class="collapsible no-sub sub-1">
+<span class="pipe" style="color: red">|</span> &nbsp;&nbsp;
+<span style="position: relative; bottom: 2px;">REVISTA DIGITAL</span>
+</button>
+</a>
+</div>
+</div>
+
+</nav>
+</header>
+<div style="background: #F6F6F6;">
+<div class="container">
+<div class="row anuncio-billboard" style="margin-bottom: 0px !important;">
+<div id="BILLBOARD1"></div>
+</div>
+</div>
+</div>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+		function copyURLPost(url) {
+			const elem = document.createElement('textarea');
+			elem.value = url;
+			document.body.appendChild(elem);
+			elem.select();
+			document.execCommand('copy');
+			document.body.removeChild(elem);
+			alert("Link copiado!")
+		}
+	</script>
+<div class="article-wrapper" style=" margin-bottom: 30px; margin-top: 56px">
+<div class="container" style="border-bottom: 1px solid #151515;" data-postid="406155" data-permalink="https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/" data-title="Em busca da pizza perfeita: especialistas dão 5 dicas para virar expert no assunto">
+<div class="row" style>
+<div class="col-12 col-lg-1"></div>
+<div class="col-12 col-lg-11">
+<p id="breadcrumbs"><span><span><a href="https://forbes.com.br/">Início</a></span> <span class="separator">/</span> <span><a href="https://forbes.com.br/forbeslife/">ForbesLife</a></span> <span class="separator">/</span> <span class="breadcrumb_last" aria-current="page">Em busca da pizza perfeita: especialistas dão 5 dicas para virar expert no assunto</span></span></p> </div>
+</div>
+<div class="row" style="margin-top: 30px;">
+<article id="post-406155" class="main-post post-406155 post type-post status-publish format-standard has-post-thumbnail hentry category-forbeslife category-negocios category-principal tag-braz-pizzaria tag-chef tag-especialista tag-forbes tag-forbeslife-tag tag-gastronomia tag-italia tag-pizzarias telegram-template">
+<div class="row">
+<div class="col-12 col-lg-1"></div>
+<div class="col-12 col-lg-11">
+<header>
+<h1 class="post__title">Em busca da pizza perfeita: especialistas dão 5 dicas para virar expert no assunto</h1> <h2 class="post__excerpt">
+No Dia Mundial da Pizza, a Forbes Brasil falou com oito profissionais sobre os detalhes por trás da iguaria italiana </h2>
+<img class="post__autor " src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://forbes.com.br/wp-content/uploads/2018/11/FORBES-2.jpg"><noscript><img class="post__autor " src="https://forbes.com.br/wp-content/uploads/2018/11/FORBES-2.jpg"></noscript>
+<span style="font-size: 14px;	font-family: 'Work Sans SemiBold', sans-serif; color: #151515;">
+Beatriz Calais e Giovanna Simonetti </span>
+<div style=" font-size: 12px; padding-top: 30px;">
+<a href="https://forbes.com.br/2021/07/">
+<span style="color: #AAAAAA; font-family: 'Work Sans', sans-serif;">
+<i class="fa fa-calendar-o" aria-hidden="true"></i>
+10 de julho de 2021 &nbsp;&nbsp;&nbsp;
+<i class="fa fa-clock-o" aria-hidden="true" style="font-size: 15px;"></i>
+Atualizado há 2 anos </span>
+</a>
+</div>
+</header>
+<div class="row compartilhamento">
+<div class="col-12 col-lg-3 compartilhamento__titulo">
+Compartilhe esta publicação:
+</div>
+<div class="col-12 col-lg-9 compartilhamento__links">
+<div style="padding: 20px 0;">
+<a href="https://twitter.com/intent/tweet?url=https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/" target="_blank">
+<i class="fa-brands fa-x-twitter fa-1x" aria-hidden="true" style="margin: 0 10px; color: #000; padding: 10px; background-color: #F6F6F6; border-radius: 50%; "></i>
+</a>
+<a href="https://www.facebook.com/sharer/sharer.php?u=https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/" target="_blank">
+<i class="fa fa-facebook fa-1x" aria-hidden="true" style="margin: 0 10px; color: #3b5998;  padding: 10px 13px; background-color: #F6F6F6; border-radius: 50%;"></i>
+</a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&url=https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/" target="_blank">
+<i class="fa fa-linkedin fa-1x" aria-hidden="true" style="margin: 0 10px; color: #0e76a8;  padding: 10px 11px; background-color: #F6F6F6; border-radius: 50%;"></i>
+</a>
+<a href="https://api.whatsapp.com/send?text=https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/" target="_blank">
+<i class="fa fa-whatsapp fa-1x" aria-hidden="true" style="margin: 0 10px; color: #34af23;  padding: 10px 11px; background-color: #F6F6F6; border-radius: 50%;"></i>
+</a>
+<a href="https://telegram.me/share/url?url=https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/" target="_blank">
+<i class="fa fa-telegram fa-1x" aria-hidden="true" style="margin: 0 10px; color: #0088cc;  padding: 10px 11px; background-color: #F6F6F6; border-radius: 50%;"></i>
+</a>
+<i class="fa fa-link fa-1x" aria-hidden="true" style="margin: 0 10px; color: #AAAAAA;  padding: 10px; background-color: #F6F6F6; border-radius: 50%; transform: scaleX(-1); cursor: pointer;" onclick="copyURLPost('https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/');"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-12 col-lg-1"></div>
+<div class="col-12 col-lg-7">
+<div class="entry-content">
+<div id="attachment_406164" class="wp-caption alignnone style=" max-width: 1034px;"><a href="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Veridiana-Margherita_8julho2021_Divulgacao.jpg"><img fetchpriority="high" decoding="async" class="alignnone size-large wp-image-406164" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20678%20452'%3E%3C/svg%3E" alt="Divulgação" width="678" height="452" data-lazy-src="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Veridiana-Margherita_8julho2021_Divulgacao-768x512.jpg" /><noscript><img fetchpriority="high" decoding="async" class="alignnone size-large wp-image-406164" src="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Veridiana-Margherita_8julho2021_Divulgacao-768x512.jpg" alt="Divulgação" width="678" height="452" /></noscript></a><div class="credito">Divulgação</div><p class="wp-caption-text">A Unesco, em dezembro de 2017, elegeu a arte dos pizzaiolos napolitanos como Patrimônio Imaterial da Humanidade</p></div>
+<div id="audimaWidget" class="audima-position-default" style="display: block;border-top: 1px solid #151515; border-bottom: 1px solid #151515; margin-top: 40px; padding: 30px 0;"></div>
+<p> <script type="rocketlazyloadscript" data-rocket-src="https://audio.audima.co/audima-widget.js"></script>
+<style type="text/css">
+	.btn{
+		cursor: pointer;
+		font-size: 20px;
+		font-family: Work Sans Medium;
+		border: solid 1px #F6F6F6;
+		padding: 7px 12px;
+		background: #FFFFFF;
+		margin-left: 10px;
+	}
+
+	.btn-active{
+		border: solid 1px #151515;
+		padding: 7px 12px;
+		background: #EEEEEE;
+		margin-left: 10px;
+		border-bottom: solid 2px #151515;
+	}
+
+	.entry-content, .entry-content p{
+		transition: all 1s;
+	}
+
+	.accessibility{
+		padding-top: 40px;
+		border-bottom: 1px solid rgba(21, 21, 21, .1);
+		padding-bottom: 10px;
+		margin-bottom: 40px;
+		background-color: white;
+	}
+
+	.accessibility__title{
+		font-family: Work Sans Medium, sans-serif;
+		color:#000000;
+		font-size: 12px;
+		padding-bottom: 20px;
+	}
+
+	.accessibility__btns{
+
+	}
+
+	@media screen and (max-width: 991px){
+		.accessibility__title{
+			display: none;
+		}
+	}
+
+</style>
+<div class="accessibility">
+<div class="accessibility__title">Acessibilidade</div>
+<div class="accessibility__btns">
+<button onclick="alterFont1()" id="btn1" class="btn">L</button>
+<button onclick="alterFont2()" id="btn2" class="btn" style="font-family: Merriweather">L</button>
+<button onclick="alterFontSmallerSize()" id="btn3" class="btn">A-</button>
+<button onclick="alterFontBiggerSize()" id="btn4" class="btn">A+</button>
+
+<button onclick="alterBackground()" id="btn6" class="btn">◐</button>
+
+<br/><br/>
+</div>
+</div>
+</p>
+<p>Conta-se que, no dia 10 de julho de 1889, o rei da Itália Humberto 1º e a rainha Margherita provaram uma boa e bela <strong>pizza</strong> pela primeira vez em suas vidas. A receita elaborada em Nápoles, na Itália, continha ingredientes que remetiam às cores da bandeira italiana. O branco da muçarela, o vermelho do tomate e o verde do manjericão. Desse jantar da realeza, duas tradições nasceram: a famosa pizza “Margherita” &#8211; em homenagem à rainha &#8211; e o <strong>Dia Mundial da Pizza</strong>.</p>
+<p>Desde então, a pizza conquista corações &#8211; e estômagos famintos &#8211; ao redor do mundo inteiro, fazendo com que a Unesco, em dezembro de 2017, elegesse a arte dos pizzaiolos napolitanos como Patrimônio Imaterial da Humanidade. Embora a origem da iguaria não seja certeira, já que sofreu influência de muitos povos diferentes, acredita-se que tenha sido em Nápoles que a primeira massa redonda surgiu e começou a ganhar prestígio.</p>
+<p><a class="link-audima" href="https://forbes.com.br/forbeslife/2021/05/dia-do-hamburguer-listamos-10-dos-sanduiches-mais-caros-do-brasil/" target="_blank" rel="noopener">LEIA MAIS: Dia do Hambúrguer: listamos 10 dos sanduíches mais caros do Brasil </a></p>
+<p>Mas, apesar de a Itália carregar o título de primeira pizzaiola da história, o Brasil também tem um grande apreço pelo prato, sendo considerado um dos maiores consumidores do mundo. A Associação de Pizzarias Unidas, em 2019, estimou que o mercado nacional de pizzas fabricava e vendia uma média de 1,7 milhão de pizzas todos os dias. E essa circulação gigantesca, é claro, não diz respeito apenas à clássica receita italiana.</p>
+<p>Com a criatividade brasileira na gastronomia, já é possível encontrar pizzas de todos os sabores, inclusive doces &#8211; realmente para todos os gostos. No entanto, embora a oferta seja grande, o que define uma pizza de qualidade? Com tantas opções no mercado, como reconhecer a que realmente vale a pena?</p>
+<div class="row" style="padding: 20px 0; margin-left: 0px; margin-right: 18px; border-top: 1px solid #151515; border-bottom: 1px solid #151515; margin-top: 60px; margin-bottom: 30px;">
+<div role="main" id="newsletter-hml-994782a8577b9b5ba704"></div>
+<p> <script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script><br/>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript"> new RDStationForms('newsletter-hml-994782a8577b9b5ba704', 'null').createForm();</script>
+</div>
+<p>A Forbes Brasil conversou com oito especialistas para responder essa questão. Rafael Rigotto Cordeiro, da Bráz Pizzaria; Marcos LIvi, da Napoli Centrale; Jeremias Pereira, da Veridiana Pizzaria; André Guidon, da Leggera Pizza Napoletana; Pedro Antonelli, da Salt ZN; Marcelo Campose, chef que assina a pizza do mês na Salt ZN e Boulanger Ozair Cavalcante, do Le Cordon Bleu Rio de Janeiro, abriram o jogo sobre o que é uma pizza perfeita.</p>
+<p>De tempo de fermentação até escolha de ingredientes, confira, na galeria abaixo, os 5 segredos de uma pizza ideal:</p>
+<div class="pksGallery">
+<div class="stage">
+<span class="back"></span>
+<span class="next"></span>
+<ul>
+<li>
+<div>
+<span>
+<img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Napoli-Centrale-Massa_8julho2021_Divulgacao-800x533.jpg" /><noscript><img decoding="async" src="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Napoli-Centrale-Massa_8julho2021_Divulgacao-800x533.jpg" /></noscript>
+<article>
+<span class="credito">Divulgação</span><p><strong>Fermentação da massa</strong></p>
+<p>Para o chef Boulanger Ozair Cavalcante, da prestigiosa escola Le Cordon Bleu Rio de Janeiro, uma boa pizza precisa ter uma excelente massa de fermentação natural, feita com levain &#8211; fermento natural &#8211; e uma farinha de qualidade, respeitando todas as etapas. Ele não é o único a pensar dessa forma. Na verdade, a excelência da massa é aspecto unânime entre os chefs. “A fermentação adequada da massa é crucial para uma pizza saborosa, leve e com belos cornicciones (as bordas)”, opina Rafael Rigotto Cordeiro, coordenador de marca da Bráz Pizzaria.</p>
+<p>A química explica: a fermentação longa enfraquece a estrutura do glúten, o que facilita a digestão e forma gases na massa, que se tornarão os alvéolos após o forneamento. Este processo mais lento também é o que dá um sabor mais complexo, levemente adocicado e ácido, à pizza, segundo o chef da Napoli Centrale, Marcos Livi. Para ele, nada de invenções: “Uma boa massa leva apenas cinco ingredientes: farinha, água, sal, fermento e dedicação.”</p>
+<p>O tempo ideal de fermentação? A resposta difere de acordo com a receita: na Bráz, as massas ficam de 24 a 48 horas descansando; diferentemente da massa da Veridiana, que pode demorar até três dias para ficar pronta, como explica o sócio Jeremias Pereira. “Para nós, 48 horas é o mínimo para chegar a bons resultados”, ele conta.</p>
+<p>*Na foto, massa da Napoli Centrale.</p>
+</article>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Braz-Massa-Molho_8julho2021_Divulgacao-800x533.jpg" /><noscript><img decoding="async" src="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Braz-Massa-Molho_8julho2021_Divulgacao-800x533.jpg" /></noscript>
+<article>
+<span class="credito">Divulgação</span><p><strong>Ingredientes</strong></p>
+<p>Depois da massa, a alma da pizza, outro ponto muito importante são os ingredientes da cobertura. Assim como a fermentação natural, é consenso entre os especialistas que quanto mais fresco os produtos, melhor. Livi elenca os itens principais: “Um bom molho de tomate, com poucos ingredientes &#8211; tomate e sal -, faz toda a diferença. Além de um queijo que derreta bem e uma boa erva para trazer frescor, como o manjericão basílico.”</p>
+<p>Na questão do molho de tomate, a pizzaria Veridiana segue essa filosofia à risca: feito do zero praticamente todos os dias e com um estilo mais “pedaçudo”, o molho base da casa é feito somente com tomates in natura (do tipo débora), azeite e sal, para realmente realçar o sabor do ingrediente principal &#8211; que fica cozinhando por um bom tempo até virar quase uma polpa, explica Pereira. </p>
+<p>Na hora de escolher os toppings da pizza, André Guidon, da Leggera Pizza Napoletana, enfatiza que, para manter um frescor ainda maior, respeitar a sazonalidade dos produtos é uma ótima ideia. “É muito legal ver as hortaliças e leguminosas da estação sendo usadas na pizza”, diz o chef do Leggera. E fugir dos alimentos muito processados: “Os produtos industrializados tendem a dar mais sede e serem mais gordurosos”, completa.</p>
+<p>*Na foto, massa da Bráz Pizzaria.</p>
+</article>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Leggera-La-Divina-Comedia_8julho2021_Divulgacao-800x533.jpg" /><noscript><img decoding="async" src="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Leggera-La-Divina-Comedia_8julho2021_Divulgacao-800x533.jpg" /></noscript>
+<article>
+<span class="credito">Divulgação</span><p><strong>Forno</strong></p>
+<p>Mesmo com uma ótima massa e ingredientes frescos, um mau trabalho de forneamento pode estragar uma pizza. A tarefa é tão importante que só os pizzaiolos mais experientes cuidam do forno na Bráz, conta Cordeiro. A temperatura, o tempo e o posicionamento do alimento precisam estar totalmente alinhados para que o resultado final seja perfeito. “Ela deve ser girada para assar por igual, com cuidado para que a base e as bordas estejam no ponto certo antes que os ingredientes da cobertura ressequem”, ele explica. </p>
+<p>“É preciso um bom forno a lenha, aquecido corretamente, com lenhas maduras, secas e de qualidade”, complementa Llvi. “Somente assim você terá uma boa constância de temperatura, em média 480 graus, e a pizza assará no tempo certo, em média 90 segundos dentro do forno. Ao final, a massa fica crocante, mas não queimada; o queijo derretido, mas não líquido; tudo assado no ponto certo, com aquele gostinho característico do fogo a lenha, que faz toda a diferença.”</p>
+<p>*Na foto, pizzas da Leggera Pizza Napoletana.</p>
+</article>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Braz-Caprese_8julho2021_Divulgacao-800x533.jpg" /><noscript><img decoding="async" src="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Braz-Caprese_8julho2021_Divulgacao-800x533.jpg" /></noscript>
+<article>
+<span class="credito">Divulgação</span><p><strong>Equilíbrio entre massa e cobertura</strong></p>
+<p>“O principal para uma pizza de qualidade é equilíbrio e a construção de camadas de sabores”, diz o chef Marcelo Campos, responsável por assinar a pizza especial do mês de julho na Salt ZN. Em sua visão, uma pizza ideal pode representar uma bela analogia sobre trabalho em equipe. Se a massa está boa e a cobertura deixa a desejar &#8211; e vice-versa &#8211; o prato, com certeza, perde pontos no quesito qualidade. </p>
+<p>Sendo assim, o ideal é encontrar um equilíbrio entre todas as etapas. “A proporção entre massa, molho e demais ingredientes deve ser equilibrada, de modo que se perceba o papel de cada ingrediente na pizza”, explica o coordenador da Bráz Pizzaria. O que ajuda, segundo o sócio da Veridiana Pizzaria, é se atentar às quantidades e proporções colocadas na iguaria. “Tem que ser uma uma quantidade que combine bem a massa e o recheio. Não pode ser exagerado, mas também não pode ser muito pouco. É uma linha tênue para que a pizza não vire uma torta.”</p>
+<p>Para os especialistas, a dica para perceber se uma pizza é balanceada ou não é simples &#8211; e deliciosa: basta degustar. “Basta analisar se ela está leve. Se você come um pedaço e parece que comeu 12, algo não está certo”, destaca Pedro Antonelli, sócio da pizzaria Salt ZN.</p>
+<p>*Na foto, pizza de caprese da Bráz Pizzaria.</p>
+</article>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<div data-premium data-adunit="FORBES_GALERIA_01" data-sizes-desktop="[[336,280],[300,250]]" data-sizes-mobile="[[336,280],[300,250]]"></div>
+<article><span class="credito">Anúncio publicitário</span></article>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Salt-Burrata_8julho2021_Divulgacao-800x533.jpg" /><noscript><img decoding="async" src="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Salt-Burrata_8julho2021_Divulgacao-800x533.jpg" /></noscript>
+<article>
+<span class="credito">Divulgação</span><p><strong>Tradicionalidade</strong></p>
+<p>Honrando a origem da pizza italiana, Guidon não deixa de ressaltar a importância da tradicionalidade. Conhecidos mundialmente pela criatividade, os brasileiros já fizeram com que a famosa pizza ganhasse coberturas um tanto curiosas, como batata frita, estrogonofe e até coxinha. Embora para alguns essa intensa variedade seja incrível, o especialista destaca que inovar demais acaba mudando o conceito do que é uma pizza. “Por ser um produto napolitano, a massa não pode ser uma desculpa para se colocar qualquer cobertura e chamar de pizza”, opina Guidon, da Leggera Pizzaria Napoletana. “Na minha percepção, as coberturas devem estar alinhadas com a dieta mediterrânea.” </p>
+<p>*Na foto, pizza de burrata da Salt ZN.</p>
+</article>
+</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="thumbs">
+<div class="thumbsStage">
+<ul>
+<li>
+<img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" border="0" data-lazy-src="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Napoli-Centrale-Massa_8julho2021_Divulgacao-40x40.jpg"><noscript><img decoding="async" src="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Napoli-Centrale-Massa_8julho2021_Divulgacao-40x40.jpg" border="0"></noscript>
+</li>
+<li>
+<img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" border="0" data-lazy-src="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Braz-Massa-Molho_8julho2021_Divulgacao-40x40.jpg"><noscript><img decoding="async" src="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Braz-Massa-Molho_8julho2021_Divulgacao-40x40.jpg" border="0"></noscript>
+</li>
+<li>
+<img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" border="0" data-lazy-src="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Leggera-La-Divina-Comedia_8julho2021_Divulgacao-40x40.jpg"><noscript><img decoding="async" src="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Leggera-La-Divina-Comedia_8julho2021_Divulgacao-40x40.jpg" border="0"></noscript>
+</li>
+<li>
+<img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" border="0" data-lazy-src="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Braz-Caprese_8julho2021_Divulgacao-40x40.jpg"><noscript><img decoding="async" src="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Pizza-Braz-Caprese_8julho2021_Divulgacao-40x40.jpg" border="0"></noscript>
+</li>
+<li></li>
+<li>
+<img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" border="0" data-lazy-src="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Salt-Burrata_8julho2021_Divulgacao-40x40.jpg"><noscript><img decoding="async" src="https://forbes.com.br/wp-content/uploads/2021/07/Life_Dia-da-Salt-Burrata_8julho2021_Divulgacao-40x40.jpg" border="0"></noscript>
+</li>
+</ul>
+</div>
+</div>
+<div class="description">
+<span class="credito">Divulgação</span><p><strong>Fermentação da massa</strong></p>
+<p>Para o chef Boulanger Ozair Cavalcante, da prestigiosa escola Le Cordon Bleu Rio de Janeiro, uma boa pizza precisa ter uma excelente massa de fermentação natural, feita com levain &#8211; fermento natural &#8211; e uma farinha de qualidade, respeitando todas as etapas. Ele não é o único a pensar dessa forma. Na verdade, a excelência da massa é aspecto unânime entre os chefs. “A fermentação adequada da massa é crucial para uma pizza saborosa, leve e com belos cornicciones (as bordas)”, opina Rafael Rigotto Cordeiro, coordenador de marca da Bráz Pizzaria.</p>
+<p>A química explica: a fermentação longa enfraquece a estrutura do glúten, o que facilita a digestão e forma gases na massa, que se tornarão os alvéolos após o forneamento. Este processo mais lento também é o que dá um sabor mais complexo, levemente adocicado e ácido, à pizza, segundo o chef da Napoli Centrale, Marcos Livi. Para ele, nada de invenções: “Uma boa massa leva apenas cinco ingredientes: farinha, água, sal, fermento e dedicação.”</p>
+<p>O tempo ideal de fermentação? A resposta difere de acordo com a receita: na Bráz, as massas ficam de 24 a 48 horas descansando; diferentemente da massa da Veridiana, que pode demorar até três dias para ficar pronta, como explica o sócio Jeremias Pereira. “Para nós, 48 horas é o mínimo para chegar a bons resultados”, ele conta.</p>
+<p>*Na foto, massa da Napoli Centrale.</p>
+</div>
+</div>
+<p><center><div class="rll-youtube-player" data-src="https://www.youtube.com/embed/qq1SGY9HASQ" data-id="qq1SGY9HASQ" data-query data-alt="YouTube video player"></div><noscript><iframe title="YouTube video player" src="https://www.youtube.com/embed/qq1SGY9HASQ" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe></noscript></center><strong>Siga FORBES Brasil nas redes sociais:</strong></p>
+<p><a href="http://fb.com/forbesbrasil">Facebook</a><br/>
+<a href="http://twitter.com/forbesbr">Twitter</a><br/>
+<a href="http://instagram.com/forbesbr">Instagram</a><br/>
+<a href="https://www.youtube.com/channel/UCGU7j8NZfhzJ2njwb2Fzcpw?sub_confirmation=1">YouTube</a><br/>
+<a href="https://www.linkedin.com/company/forbes-brasil/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+<p><a href="https://t.me/forbesmoney" target="_blank" rel="noopener">Siga Forbes Money no Telegram e tenha acesso a notícias do mercado financeiro em primeira mão</a></p>
+<p>Baixe o <a href="http://onelink.to/kc64mh">app</a> da Forbes Brasil na Play Store e na App Store.</p>
+<p>Tenha também a Forbes no <a href="https://news.google.com/s/CBIw6IuyhkE" target="_blank" rel="noopener noreferrer">Google Notícias</a>.</p>
+</div>
+</div>
+<div class="col-12 col-lg-4 anuncio-materia-desktop" style="margin-top: 20px;">
+<div class="sticky-sidebar" data-premium data-adunit="FORBES_HALFPAGE_1" data-sizes-desktop="[[300,600],[160,600]]"></div>
+</div>
+</div>
+<div class="row">
+<div class="col-12 col-lg-1"></div>
+<div class="col-12 col-lg-11">
+<div class="row compartilhamento">
+<div class="col-12 col-lg-3 compartilhamento__titulo">
+Compartilhe esta publicação:
+</div>
+<div class="col-12 col-lg-9 compartilhamento__links">
+<div style="padding: 20px 0;">
+<a href="https://twitter.com/intent/tweet?url=https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/" target="_blank">
+<i class="fa-brands fa-x-twitter fa-1x" aria-hidden="true" style="margin: 0 10px; color: #000; padding: 10px; background-color: #F6F6F6; border-radius: 50%; "></i>
+</a>
+<a href="https://www.facebook.com/sharer/sharer.php?u=https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/" target="_blank">
+<i class="fa fa-facebook fa-1x" aria-hidden="true" style="margin: 0 10px; color: #3b5998;  padding: 10px 13px; background-color: #F6F6F6; border-radius: 50%;"></i>
+</a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&url=https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/" target="_blank">
+<i class="fa fa-linkedin fa-1x" aria-hidden="true" style="margin: 0 10px; color: #0e76a8;  padding: 10px 11px; background-color: #F6F6F6; border-radius: 50%;"></i>
+</a>
+<a href="https://api.whatsapp.com/send?text=https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/" target="_blank">
+<i class="fa fa-whatsapp fa-1x" aria-hidden="true" style="margin: 0 10px; color: #34af23;  padding: 10px 11px; background-color: #F6F6F6; border-radius: 50%;"></i>
+</a>
+<a href="https://telegram.me/share/url?url=https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/" target="_blank">
+<i class="fa fa-telegram fa-1x" aria-hidden="true" style="margin: 0 10px; color: #0088cc;  padding: 10px 11px; background-color: #F6F6F6; border-radius: 50%;"></i>
+</a>
+<i class="fa fa-link fa-1x" aria-hidden="true" style="margin: 0 10px; color: #AAAAAA;  padding: 10px; background-color: #F6F6F6; border-radius: 50%; transform: scaleX(-1); cursor: pointer;" onclick="copyURLPost('https://forbes.com.br/forbeslife/2021/07/em-busca-da-pizza-perfeita-especialistas-dao-5-dicas-para-virar-expert-no-assunto/');"></i>
+</div>
+</div>
+</div> </div>
+</div>
+<div class="row">
+<div class="col-12 col-lg-1"></div>
+<div class="col-12 col-lg-11">
+<hr style=" border: 1px solid #151515; margin: 20px 0 0; background: #151515; ">
+<span style="background: #151515; color: white; padding: 8px 16px; font-family: 'Work Sans', sans-serif; font-size: 11px;">Temas</span>
+<br><br>
+<ul style="list-style: none; padding: 0 0 20px 0;">
+<li style="display: inline-block; padding: 4px 8px; background: #F6F6F6; color: #AAA; border-radius: 4px; margin: 0 2px 2px 0;">
+<a href="https://forbes.com.br/tag/braz-pizzaria/" title="Veja outras matérias relacionadas com &quot;Bráz Pizzaria&quot;">
+<span>
+Bráz Pizzaria </span>
+</a>
+</li>
+<li style="display: inline-block; padding: 4px 8px; background: #F6F6F6; color: #AAA; border-radius: 4px; margin: 0 2px 2px 0;">
+<a href="https://forbes.com.br/tag/chef/" title="Veja outras matérias relacionadas com &quot;chef&quot;">
+<span>
+chef </span>
+</a>
+</li>
+<li style="display: inline-block; padding: 4px 8px; background: #F6F6F6; color: #AAA; border-radius: 4px; margin: 0 2px 2px 0;">
+<a href="https://forbes.com.br/tag/especialista/" title="Veja outras matérias relacionadas com &quot;especialista&quot;">
+<span>
+especialista </span>
+</a>
+</li>
+<li style="display: inline-block; padding: 4px 8px; background: #F6F6F6; color: #AAA; border-radius: 4px; margin: 0 2px 2px 0;">
+<a href="https://forbes.com.br/tag/forbes/" title="Veja outras matérias relacionadas com &quot;FORBES&quot;">
+<span>
+FORBES </span>
+</a>
+</li>
+<li style="display: inline-block; padding: 4px 8px; background: #F6F6F6; color: #AAA; border-radius: 4px; margin: 0 2px 2px 0;">
+<a href="https://forbes.com.br/tag/forbeslife-tag/" title="Veja outras matérias relacionadas com &quot;ForbesLife&quot;">
+<span>
+ForbesLife </span>
+</a>
+</li>
+<li style="display: inline-block; padding: 4px 8px; background: #F6F6F6; color: #AAA; border-radius: 4px; margin: 0 2px 2px 0;">
+<a href="https://forbes.com.br/tag/gastronomia/" title="Veja outras matérias relacionadas com &quot;gastronomia&quot;">
+<span>
+gastronomia </span>
+</a>
+</li>
+<li style="display: inline-block; padding: 4px 8px; background: #F6F6F6; color: #AAA; border-radius: 4px; margin: 0 2px 2px 0;">
+<a href="https://forbes.com.br/tag/italia/" title="Veja outras matérias relacionadas com &quot;itália&quot;">
+<span>
+itália </span>
+</a>
+</li>
+<li style="display: inline-block; padding: 4px 8px; background: #F6F6F6; color: #AAA; border-radius: 4px; margin: 0 2px 2px 0;">
+<a href="https://forbes.com.br/tag/pizzarias/" title="Veja outras matérias relacionadas com &quot;Pizzarias&quot;">
+<span>
+Pizzarias </span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+<style type="text/css">
+    .pksGallery ul { margin: 0; list-style: none; }
+    .pksGallery li { margin: 0; }
+    .pksGallery .stage > ul li div span{ position: relative }
+    .pksGallery .credito{
+        display: block;
+        margin-bottom: -5px 0 10px;
+    }
+</style>
+<style type="text/css" media="screen">
+	#rd-section-lf3azhpo #rd-text-lf3azhpr{ display:none !important; }
+	#rd-section-lf3azhpo #rd-text-lf3azhps h2{ 
+		text-align:left !important; 
+	}
+	#rd-section-lf3azhpo #rd-column-lf3azhpq > div,
+	#rd-section-lf3azhpo #rd-column-lf3azhpu > div{ 
+		padding-left: 5rem !important; 
+		padding-right: 5rem !important; 
+	}
+	#rd-section-lf3azhpo #rd-text-lf3azhps,
+	#rd-section-lf3azhpo .bricks-form__privacy,
+	#rd-section-lf3azhpo .bricks-form__terms{ 
+		margin-bottom: 0!important; }
+	#rd-section-lf3azhpo #rd-text-lf3azhps h2 span
+	{
+		font-family: 'Merriweather Regular', sans-serif !important;
+		font-size: 15px !important;
+		color: #000 !important;
+	}
+	#rd-section-lf3azhpo #rd-form-lf3azhpv .bricks-form__label,
+	#rd-section-lf3azhpo #rd-form-lf3azhpv .bricks-form__static,
+	#rdstation-bricks-embeddable-form-bricks-component-2D6HriAH3drgqF-kQsai9w .bricks--component
+	{
+		font-family: Work Sans, sans-serif !important; 	
+	}
+	#rd-section-lf3azhpo .bricks-form__submit .rd-button{
+		font-size: 12px !important;
+		max-width: 100% !important;
+		min-width: auto !important;
+		width: 20rem !important;
+		text-transform: uppercase !important;
+	}
+	#rd-section-lf3azhpo #rd-form-lf3azhpv .bricks-form__label,
+	#rd-section-lf3azhpo #rd-form-lf3azhpv .bricks-form__static{
+		font-size: 14px !important;
+		color: #000 !important;
+	}
+	#rd-section-lf3azhpo #rd-form-lf3azhpv a {
+		color: #005a8c !important;
+		text-decoration: none !Important;
+		font-weight: bold !important;
+	}
+	#rd-section-lf3azhpo #rd-form-lf3azhpv .bricks-form__input{
+		border-radius: 0 !important;
+		height: 40px !important;
+		border-color: black !important;
+	}
+	@media screen and (max-width: 991px){
+		#rd-section-lf3azhpo #rd-column-lf3azhpq > div,
+		#rd-section-lf3azhpo #rd-column-lf3azhpu > div{ 
+			padding-left: 1rem !important; 
+			padding-right: 1rem !important; 
+		}
+	}
+</style>
+<div style="background: #F6F6F6;">
+<div class="container">
+<div class="row anuncio-billboard" style="margin-bottom: 0px !important;">
+<div class="col-12" style="background: #F6F6F6;">
+<div id="RODAPE" style="position:relative;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-members">
+<div class="container">
+<div class="row">
+<div class="col-xl-4 col-sm-12">
+<div style=" padding-top: 36px;">
+<b class="footer-members__title">Membros Forbes Brasil</b>
+<br/>
+<span class="footer-members__text">Faça seu login e leia a edição digital diretamente em seu dispositivo. Apenas para assinantes.</span>
+<br/>
+<a href="https://forbes.com.br/assine" class="footer-members__link">
+<span class="footer-members__link__btn">
+Seja um assinante<b style="font-size: 15px;">→</b>
+</span>
+</a>
+</div>
+</div>
+<div class="col-xl-8 col-sm-12 footer-members__img">
+<div class="row"><p><div id="revistas-desk"><a href="https://forbes.com.br/forbesagro/2023/11/forbes-agro100-2023-nova-edicao-da-forbes-brasil-traz-lista-das-maiores-empresas-do-agro/" target="_blank"><img decoding="async" class=" size-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://forbes.com.br/wp-content/uploads/2023/11/FORBES_113_CAPA-e1699543285932-228x300.jpg"><noscript><img decoding="async" class=" size-img" src="https://forbes.com.br/wp-content/uploads/2023/11/FORBES_113_CAPA-e1699543285932-228x300.jpg"></noscript></a><img decoding="async" class=" size-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://forbes.com.br/wp-content/uploads/2023/10/capa_edicao-112-228x300.jpg"><noscript><img decoding="async" class=" size-img" src="https://forbes.com.br/wp-content/uploads/2023/10/capa_edicao-112-228x300.jpg"></noscript><img decoding="async" class=" size-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://forbes.com.br/wp-content/uploads/2023/10/capa_flf_edicao-5-218x300.png"><noscript><img decoding="async" class=" size-img" src="https://forbes.com.br/wp-content/uploads/2023/10/capa_flf_edicao-5-218x300.png"></noscript><a href="https://forbes.com.br/forbes-money/2023/08/nova-edicao-da-forbes-brasil-traz-lista-de-bilionarios-brasileiros-e-celebra-11-anos-da-revista/" target="_blank"><img decoding="async" class=" size-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://forbes.com.br/wp-content/uploads/2023/09/edicao-111-226x300.png"><noscript><img decoding="async" class=" size-img" src="https://forbes.com.br/wp-content/uploads/2023/09/edicao-111-226x300.png"></noscript></a><a href="https://forbes.com.br/forbeslife/2023/07/nova-edicao-da-forbes-brasil-retrata-a-nova-cara-do-turismo-no-brasil-e-no-mundo/" target="_blank"><img decoding="async" class=" size-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://forbes.com.br/wp-content/uploads/2023/09/edicao-110-228x300.jpg"><noscript><img decoding="async" class=" size-img" src="https://forbes.com.br/wp-content/uploads/2023/09/edicao-110-228x300.jpg"></noscript></a><a href="https://forbes.com.br/forbeslife/2023/06/50-over-50-2023-nova-edicao-da-forbes-destaca-pessoas-de-sucesso-com-mais-de-50-anos-2/" target="_blank"><img decoding="async" class=" size-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://forbes.com.br/wp-content/uploads/2023/07/Capa-ED-109-228x300.jpg"><noscript><img decoding="async" class=" size-img" src="https://forbes.com.br/wp-content/uploads/2023/07/Capa-ED-109-228x300.jpg"></noscript></a></div><div class="swiper" id="revistas-mobile"><div class="swiper-wrapper"><div class="swiper-slide"><a href="https://forbes.com.br/forbesagro/2023/11/forbes-agro100-2023-nova-edicao-da-forbes-brasil-traz-lista-das-maiores-empresas-do-agro/" target="_blank"><img class="size-img swiper-lazy skip_lazy" data-src="https://forbes.com.br/wp-content/uploads/2023/11/FORBES_113_CAPA-e1699543285932-228x300.jpg"></a></div><div class="swiper-slide"><img class="size-img swiper-lazy skip_lazy" data-src="https://forbes.com.br/wp-content/uploads/2023/10/capa_edicao-112-228x300.jpg"></div><div class="swiper-slide"><img class="size-img swiper-lazy skip_lazy" data-src="https://forbes.com.br/wp-content/uploads/2023/10/capa_flf_edicao-5-218x300.png"></div><div class="swiper-slide"><a href="https://forbes.com.br/forbes-money/2023/08/nova-edicao-da-forbes-brasil-traz-lista-de-bilionarios-brasileiros-e-celebra-11-anos-da-revista/" target="_blank"><img class="size-img swiper-lazy skip_lazy" data-src="https://forbes.com.br/wp-content/uploads/2023/09/edicao-111-226x300.png"></a></div><div class="swiper-slide"><a href="https://forbes.com.br/forbeslife/2023/07/nova-edicao-da-forbes-brasil-retrata-a-nova-cara-do-turismo-no-brasil-e-no-mundo/" target="_blank"><img class="size-img swiper-lazy skip_lazy" data-src="https://forbes.com.br/wp-content/uploads/2023/09/edicao-110-228x300.jpg"></a></div><div class="swiper-slide"><a href="https://forbes.com.br/forbeslife/2023/06/50-over-50-2023-nova-edicao-da-forbes-destaca-pessoas-de-sucesso-com-mais-de-50-anos-2/" target="_blank"><img class="size-img swiper-lazy skip_lazy" data-src="https://forbes.com.br/wp-content/uploads/2023/07/Capa-ED-109-228x300.jpg"></a></div></div></div><script type="rocketlazyloadscript">if(jQuery('#mh-mobile').length){ const swiper = new Swiper('.swiper', { speed: 1200, loop: true, slidesPerView: 2, spaceBetween: 20, autoplay: true, preloadImages: false, lazy: true }); }</script></p>
+</div> <div>
+<a href="https://forbes.com.br/assine" class="footer-members__link__mobile">
+<span class="footer-members__link__btn__mobile">
+Seja um assinante <b style="font-size: 15px;">→</b>
+</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<div class="container">
+<div class="row">
+<div class="col-lg-5 col-12">
+<div class="row">
+<div class="col-lg-4 col-12 footer__logo">
+<a href="https://forbes.com.br">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://forbes.com.br/wp-content/themes/mh-magazine-child-corebiz/images/logo.svg" /><noscript><img src="https://forbes.com.br/wp-content/themes/mh-magazine-child-corebiz/images/logo.svg" /></noscript>
+</a>
+<div class="footer__social">
+<div class="row">
+<div class="col-1"></div>
+<div class="col-2"><a href="https://www.facebook.com/ForbesBrasil" target="_blank"><i class="fa fa-facebook fa-lg" aria-hidden="true" style="color: white;"></i></a></div><div class="col-2"><a href="https://twitter.com/forbesbr" target="_blank"><i class="fa-brands fa-x-twitter" aria-hidden="true" style="color: white;"></i></a></div><div class="col-2"><a href="https://www.instagram.com/forbesbr/" target="_blank"><i class="fa fa-instagram fa-lg" aria-hidden="true" style="color: white;"></i></a></div><div class="col-2"><a href="https://www.youtube.com/channel/UCGU7j8NZfhzJ2njwb2Fzcpw" target="_blank"><i class="fa fa-youtube-play fa-lg" aria-hidden="true" style="color: white;"></i></a></div><div class="col-2"><a href="https://www.linkedin.com/company/forbes-brasil" target="_blank"><i class="fa fa-linkedin fa-lg" aria-hidden="true" style="color: white;"></i></a></div> <div class="col-1"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-1 col-12"></div>
+<div class="col-lg-6 col-12 footer__links">
+<div class="row">
+<div class="col-lg-4 col-12 footer__links__social">
+<div style="padding-bottom: 27px;"><a href="https://www.facebook.com/ForbesBrasil" target="_blank"><i class="fa fa-facebook fa-lg" aria-hidden="true" style="color: white;"></i><span style="color: white; font-size: 15px; font-family: Merriweather, serif;">&nbsp;&nbsp; — @forbesbr</span></a></div><div style="padding-bottom: 27px;"><a href="https://twitter.com/forbesbr" target="_blank"><i class="fa-brands fa-x-twitter" aria-hidden="true" style="color: white;"></i><span style="color: white; font-size: 15px; font-family: Merriweather, serif;">&nbsp; — @forbesbr</span></a></div><div style="padding-bottom: 27px;"><a href="https://www.instagram.com/forbesbr/" target="_blank"><i class="fa fa-instagram fa-lg" aria-hidden="true" style="color: white;"></i><span style="color: white; font-size: 15px; font-family: Merriweather, serif;">&nbsp; — @forbesbr</span></a></div><div style="padding-bottom: 27px;"><a href="https://www.youtube.com/channel/UCGU7j8NZfhzJ2njwb2Fzcpw" target="_blank"><i class="fa fa-youtube-play fa-lg" aria-hidden="true" style="color: white;"></i><span style="color: white; font-size: 15px; font-family: Merriweather, serif;">&nbsp; — yt/forbesbr</span></a></div><div style="padding-bottom: 27px;"><a href="https://www.linkedin.com/company/forbes-brasil" target="_blank"><i class="fa fa-linkedin fa-lg" aria-hidden="true" style="color: white;"></i><span style="color: white; font-size: 15px; font-family: Merriweather, serif;">&nbsp; — forbes brasil</span></a></div> </div>
+<div class="col-lg-3 col-12 footer__links__forbes">
+<div style="font-size: 15px;">
+Forbes Br.
+</div>
+<div>
+<a href="https://forbes.com.br/sobre-2">
++ Sobre nós
+</a>
+</div>
+<div>
+<a href="https://forbesplus.com.br/" target="_blank">
++ Forbes+
+</a>
+</div>
+<div>
+<a href="https://forbes.com.br/revista">
++ Revista digital
+</a>
+</div>
+<div>
+<a href="https://forbes.com.br/anuncie">
++ Anuncie
+</a>
+</div>
+<div>
+<a href="https://forbes.com.br/fale-conosco">
++ Contato
+</a>
+</div>
+</div>
+<div class="col-lg-5 col-12 footer__links__uteis">
+<div style="font-size: 15px;">
+Links úteis
+</div>
+<div>
+<a href="https://forbes.com.br/privacidade/">
++ Política de Privacidade
+</a>
+</div>
+<div>
+<a href="https://forbes.com.br/newsletter">
++ Newsletter
+</a>
+</div>
+<div>
+<a href="https://www.terra.com.br/" target="_blank" rel="nofollow" title="Portal Terra">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2070%2031'%3E%3C/svg%3E" alt="logo Terra" width="70" height="31" data-lazy-src="https://forbes.com.br/wp-content/themes/mh-magazine-child-corebiz/images/logoterrahorizontal.svg"><noscript><img src="https://forbes.com.br/wp-content/themes/mh-magazine-child-corebiz/images/logoterrahorizontal.svg" alt="logo Terra" width="70" height="31"></noscript>
+</a>
+</div>
+<div>
+<a href="https://br.tradingview.com/markets/" target="_blank" rel="nofollow" title="Veja outras cotações em TradingView">Cotações por <span style="color:#546ff7;">TradingView</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-copyright">
+<div class="container">
+<p class="col-12">
+&copy; Forbes 2023. Todos os direitos reservados.
+</p>
+</div>
+</div>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+          	// ----------------------------------
+			// ACESSIBILIDADE PÁGINA DE POST
+			// ----------------------------------
+
+			var font1 =  localStorage.getItem("font1");
+			if(font1 === null){
+			  localStorage.setItem("font1", 0);
+			}else{
+			  var content = document.querySelector(".entry-content")
+			  var btn1 = document.getElementById("btn1")
+
+			  if(Number(font1) === 1){
+			    // console.log(">>> Font 1 setada -- ", font1)
+			    content.style.fontFamily = 'Work Sans Medium'
+			    btn1.classList.add("btn-active")
+			  }
+			}
+
+			function alterFont1(){
+			  var content = document.querySelector(".entry-content")
+			  var btn1 = document.getElementById("btn1")
+			  var font1 =  localStorage.getItem("font1");
+
+			  if(Number(font1) === 0){
+			    content.style.fontFamily = 'Work Sans Medium'
+			    btn1.classList.add("btn-active")
+			    localStorage.setItem("font1", 1);
+
+			    var btn2 = document.getElementById("btn2")
+			    btn2.classList.remove("btn-active")
+			    localStorage.setItem("font2", 0);
+			  }else{
+			    content.style.fontFamily = 'Merriweather Regular'
+			    btn1.classList.remove("btn-active")
+			    localStorage.setItem("font1", 0);
+			  }
+			}
+
+			// ------------------------------------------------
+			// ------------------------------------------------
+			// ------------------------------------------------
+
+			var font2 =  localStorage.getItem("font2");
+			if(font2 === null){
+			  localStorage.setItem("font2", 0);
+			  var font2 =  localStorage.getItem("font2");
+			}else{
+			  var content = document.querySelector(".entry-content")
+			  var btn2 = document.getElementById("btn2")
+
+			  if(Number(font2) === 1){
+			    content.style.fontFamily = 'Merriweather'
+			    btn2.classList.add("btn-active")
+			  }
+			}
+
+			function alterFont2(){
+			  var content = document.querySelector(".entry-content")
+			  var btn2 = document.getElementById("btn2")
+			  var font2 =  localStorage.getItem("font2");
+
+			  if(Number(font2) === 0){
+			    content.style.fontFamily = 'Merriweather'
+			    btn2.classList.add("btn-active")
+			    localStorage.setItem("font2", 1);
+
+			    var btn1 = document.getElementById("btn1")
+			    btn1.classList.remove("btn-active")
+			    localStorage.setItem("font1", 0);
+			  }else{
+			    content.style.fontFamily = 'Merriweather Regular'
+			    btn2.classList.remove("btn-active")
+			    localStorage.setItem("font2", 0);
+			  }
+			}
+
+			// ------------------------------------------------
+			// ------------------------------------------------
+			// ------------------------------------------------
+
+			var fontsize =  localStorage.getItem("fontsize");
+			if(fontsize === null){
+			  localStorage.setItem("fontsize", 15);
+			  var fontsize =  localStorage.getItem("fontsize");
+			}else{
+			  // var content = document.querySelector(".entry-content")
+			  // content.style.fontSize = Number(fontsize) + 'px'
+
+			  var content = document.querySelectorAll(".entry-content p")
+			  for (i = 0; i < content.length; i++) {
+		        content[i].style.fontSize = Number(fontsize) + 'px'
+		      }
+
+			  if(Number(fontsize) > 15){
+			    var btn3 = document.getElementById("btn3")
+			    btn3.classList.remove("btn-active")
+			    var btn4 = document.getElementById("btn4")
+			    btn4.classList.add("btn-active")
+			  }
+
+			  if(Number(fontsize) < 15){
+			    var btn3 = document.getElementById("btn3")
+			    btn3.classList.add("btn-active")
+			    var btn4 = document.getElementById("btn4")
+			    btn4.classList.remove("btn-active")
+			  }
+			}
+
+			function alterFontBiggerSize(){
+			  var content = document.querySelectorAll(".entry-content p")
+			  var fontsize =  localStorage.getItem("fontsize");
+			  fontsize = Number(fontsize) + 2
+			  if(Number(fontsize) > 25){
+			    fontsize = 25
+			  }
+
+			  // content.style.setProperty('font-size', Number(fontsize) + 'px', 'important');
+			  for (i = 0; i < content.length; i++) {
+		        content[i].style.fontSize = Number(fontsize) + 'px'
+		      }
+
+			  // content.style.fontSize = Number(fontsize) + 'px'
+			  localStorage.setItem("fontsize", fontsize);
+
+			  var btn4 = document.getElementById("btn4")
+			  if(Number(fontsize) === 15){
+			    btn4.classList.remove("btn-active")
+			  }else{
+			    btn4.classList.add("btn-active")
+			  }
+
+			  var btn3 = document.getElementById("btn3")
+			  btn3.classList.remove("btn-active")
+			}
+
+			function alterFontSmallerSize(){
+			  // var content = document.querySelector(".entry-content")
+			  var content = document.querySelectorAll(".entry-content p")
+			  var fontsize =  localStorage.getItem("fontsize");
+			  fontsize = Number(fontsize) - 2
+			  if(Number(fontsize) < 11){
+			    fontsize = 11
+			  }
+
+			  // content.style.fontSize = Number(fontsize) + 'px'
+			  for (i = 0; i < content.length; i++) {
+		        content[i].style.fontSize = Number(fontsize) + 'px'
+		      }
+
+			  localStorage.setItem("fontsize", fontsize);
+
+			  var btn3 = document.getElementById("btn3")
+			  if(Number(fontsize) === 15){
+			    btn3.classList.remove("btn-active")
+			  }else{
+			    btn3.classList.add("btn-active")
+			  }
+			  var btn4 = document.getElementById("btn4")
+			  btn4.classList.remove("btn-active")
+			}
+
+			// ------------------------------------------------
+			// ------------------------------------------------
+			// ------------------------------------------------
+
+			var fontbolder =  localStorage.getItem("fontbolder");
+			if(fontbolder === null){
+			  localStorage.setItem("fontbolder", 0);
+			  var fontbolder =  localStorage.getItem("fontbolder");
+			}else{
+			  // var content = document.querySelectorAll(".entry-content p span")
+			  var content = document.querySelectorAll(".entry-content")
+			  // var btn5 = document.getElementById("btn5")
+			  var i;
+
+			  if(Number(fontbolder) === 1){
+			    // btn5.classList.add("btn-active")
+			    for (i = 0; i < content.length; i++) {
+			      content[i].style.fontWeight = "bolder";
+			    }
+			  }else{
+			    // btn5.classList.remove("btn-active")
+			    for (i = 0; i < content.length; i++) {
+			      content[i].style.fontWeight = "normal";
+			    }
+			  }
+			}
+
+			function alterFontBolder(){
+			  var content = document.querySelectorAll(".entry-content")
+			  // var btn5 = document.getElementById("btn5")
+			  var i;
+			  var fontbolder =  localStorage.getItem("fontbolder");
+			  if(Number(fontbolder) === 0){
+			    // console.log(">>> Bolder")
+			    // btn5.classList.add("btn-active")
+			    for (i = 0; i < content.length; i++) {
+			      content[i].style.fontWeight = "bolder";
+			    }
+			    localStorage.setItem("fontbolder", 1)
+			  }else{
+			    // btn5.classList.remove("btn-active")
+			    for (i = 0; i < content.length; i++) {
+			      content[i].style.fontWeight = "normal";
+			    }
+			    localStorage.setItem("fontbolder", 0)
+			  }
+			}
+
+			// ------------------------------------------------
+			// ------------------------------------------------
+			// ------------------------------------------------
+
+			// Verifica se já existe e se já foi clicado no botão
+			var background =  localStorage.getItem("background");
+			if(background === null){
+			  localStorage.setItem("background", 0);
+			  var background =  localStorage.getItem("background");
+			}else{
+			  var content = document.querySelector(".entry-content")
+			  var contentlinks = document.querySelectorAll(".entry-content p a strong, .entry-content p a, .pksGallery .description, .wp-caption-text")
+			  var btn6 = document.getElementById("btn6")
+			  var i;
+			  if(Number(background) === 1){
+			    btn6.classList.add("btn-active")
+			    content.style.background = '#151515'
+			    for (i = 0; i < contentlinks.length; i++) {
+			      contentlinks[i].style.color = '#ffffff'
+			      contentlinks[i].style.background = '#151515'
+			    }
+			    content.style.color = '#ffffff'
+			  }else{
+			    btn6.classList.remove("btn-active")
+			    content.style.background = '#ffffff'
+			    content.style.color = '#000000'
+			     for (i = 0; i < contentlinks.length; i++) {
+			      contentlinks[i].style.color = '#000000'
+			      contentlinks[i].style.background = '#ffffff'
+			    }
+			  }
+			}
+
+			// Faz alteração quando clicar no botão
+			function alterBackground(){
+			  var content = document.querySelector(".entry-content")
+			  var contentlinks = document.querySelectorAll(".entry-content p a strong, .entry-content p a, .pksGallery .description, .wp-caption-text")
+			  var btn6 = document.getElementById("btn6")
+			  var i;
+			  var background =  localStorage.getItem("background");
+			  if(Number(background) === 0){
+			    btn6.classList.add("btn-active")
+			    content.style.background = '#151515'
+			    for (i = 0; i < contentlinks.length; i++) {
+			      contentlinks[i].style.color = '#ffffff'
+			      contentlinks[i].style.background = '#151515'
+			    }
+			    content.style.color = '#ffffff'
+			    localStorage.setItem("background", 1)
+			  }else{
+			    btn6.classList.remove("btn-active")
+			    content.style.background = '#ffffff'
+			    content.style.color = '#000000'
+			     for (i = 0; i < contentlinks.length; i++) {
+			      contentlinks[i].style.color = '#000000'
+			      contentlinks[i].style.background = '#ffffff'
+			    }
+			    localStorage.setItem("background", 0)
+			  }
+			}
+      
+      function recatcha_poll() {
+        $("input[name='ays-finish-poll']").each(function(el) {
+          $(this).attr("name", "ays_finish_poll");
+        });
+        $(".g-recaptcha").hide();
+        $(".apm-button-box").show();
+      }
+
+			// function clean(){
+			//   localStorage.setItem("font1", 0);
+			//   localStorage.setItem("font2", 0);
+			//   localStorage.setItem("fontsize", 18);
+			//   localStorage.setItem("fontbolder", 0)
+			//   localStorage.setItem("background", 0)
+
+			// }
+
+			// ----------------------------------
+			// FIM ACESSIBILIDADE PÁGINA DE POST
+			// ----------------------------------
+        </script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" async data-rocket-src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/d4687957-1788-4d68-ab9b-0c1cfe033890-loader.js"></script> <div id="fb-root"></div>
+<script type="rocketlazyloadscript">
+				(function(d, s, id){
+					var js, fjs = d.getElementsByTagName(s)[0];
+					if (d.getElementById(id)) return;
+					js = d.createElement(s); js.id = id;
+					js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.9";
+					fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
+			</script> <script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://forbes.com.br/wp-content/plugins/pks-gallery/jquery.waypoints.min.js?ver=20180410" id="jquery-waypoint-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://forbes.com.br/wp-content/plugins/pks-gallery/pks-gallery.js?ver=20230825.2" id="galleryJS-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://forbes.com.br/wp-content/themes/mh-magazine-child-corebiz/js/scripts.js?ver=20220713-16:47" id="mvp-child-script-js"></script>
+<script type="text/javascript" id="elav-js-extra">
+/* <![CDATA[ */
+var elav_ajax = {"ajax_url":"https:\/\/forbes.com.br\/wordpress\/wp-admin\/admin-ajax.php"};
+var elav = {"ajax_url":"https:\/\/forbes.com.br\/wordpress\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://forbes.com.br/wp-content/themes/mh-magazine-child-corebiz/js/elav.js?ver=20230810a" id="elav-js"></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://forbes.com.br/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><script>function lazyLoadThumb(e,alt){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';t=t.replace('alt=""','alt="'+alt+'"');return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id,a[t].dataset.alt),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script>
+<script type="rocketlazyloadscript" data-cfasync="false" async data-rocket-src="https://tags.premiumads.com.br/dfp/17e52c31-f863-486f-4299-08d8f3aea748"></script>
+<script>(function(){var js = "window['__CF$cv$params']={r:'82f75c0aac4321c4',t:'MTcwMTU1OTg0NS45NDAwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></body>
+</html>
